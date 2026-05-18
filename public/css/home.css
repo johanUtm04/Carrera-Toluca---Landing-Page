@@ -1,0 +1,180 @@
+:root {
+    --bg-dark: #060a13;
+    --blue-gradient: linear-gradient(135deg, rgba(0, 51, 102, 0.9) 0%, rgba(6, 10, 19, 0.98) 100%);
+    --accent-red: #d9232e;
+    --accent-orange: #f39c12;
+    --text-white: #ffffff;
+    --text-muted: #7f8e9d;
+    --glass: rgba(255, 255, 255, 0.02);
+    --glass-border: rgba(255, 255, 255, 0.06);
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { font-family: 'Montserrat', sans-serif; background-color: var(--bg-dark); color: var(--text-white); overflow-x: hidden; scroll-behavior: smooth; }
+
+/* REUTILIZABLES */
+.mini-tag { background: rgba(217, 35, 46, 0.12); border: 1px solid rgba(217, 35, 46, 0.25); color: #ff525b; padding: 6px 14px; border-radius: 20px; font-size: 0.75rem; font-weight: 700; letter-spacing: 2px; display: inline-block; margin-bottom: 20px; text-transform: uppercase; }
+.section-title { text-align: center; margin-bottom: 50px; }
+.section-title h2 { font-size: 2.8rem; font-weight: 900; letter-spacing: -1px; margin-top: 10px; }
+
+/* HERO */
+.hero { position: relative; max-width: 1300px; min-height: 580px; margin: 100px auto 60px auto; padding: 60px 80px; background: var(--blue-gradient), url('../images/palacio-toluca.jpg'); background-size: cover; background-position: center; border-radius: 40px; border: 1px solid rgba(0, 82, 163, 0.15); box-shadow: 0 30px 80px rgba(0, 0, 0, 0.8); display: flex; align-items: center; overflow: visible; }
+.overlay { position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: radial-gradient(circle at 20% 50%, rgba(0,0,0,0) 0%, rgba(6,10,19,0.4) 100%); border-radius: 40px; pointer-events: none; z-index: 1; }
+.runner { position: absolute; right: 60px; bottom: -40px; height: 112%; width: auto; object-fit: contain; z-index: 10; filter: drop-shadow(-20px 25px 35px rgba(0, 0, 0, 0.9)); pointer-events: none; }
+.hero-content { position: relative; z-index: 5; max-width: 600px; }
+h1 { font-size: 4.8rem; font-weight: 900; line-height: 0.95; letter-spacing: -2px; margin-bottom: 20px; }
+p { color: var(--text-muted); font-size: 1.1rem; line-height: 1.6; margin-bottom: 35px; }
+.hero-buttons { display: flex; align-items: center; gap: 25px; margin-bottom: 50px; }
+.hero-buttons button { background: var(--text-white); color: var(--bg-dark); border: none; padding: 16px 36px; font-size: 1rem; font-weight: 800; border-radius: 12px; cursor: pointer; transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275); }
+.hero-buttons button:hover { transform: translateY(-3px); box-shadow: 0 15px 30px rgba(255, 255, 255, 0.2); }
+.hero-buttons a { color: var(--accent-orange); text-decoration: none; font-weight: 700; font-size: 1rem; border-bottom: 2px solid transparent; transition: all 0.3s ease; }
+.hero-buttons a:hover { border-color: var(--accent-orange); }
+.hero-stats { display: flex; gap: 40px; }
+.hero-stats div { display: flex; flex-direction: column; }
+.hero-stats strong { font-size: 2rem; font-weight: 900; color: var(--text-white); }
+.hero-stats span { font-size: 0.75rem; color: var(--text-muted); text-transform: uppercase; letter-spacing: 1px; margin-top: 5px; }
+
+/* SECCIÓN KIT DEL CORREDOR */
+.kit-section { max-width: 1300px; margin: 100px auto; padding: 0 40px; }
+.kit-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 25px; }
+.kit-card { background: var(--glass); border: 1px solid var(--glass-border); padding: 40px 30px; border-radius: 24px; transition: all 0.4s ease; backdrop-filter: blur(10px); }
+.kit-card:hover { transform: translateY(-5px); border-color: rgba(217, 35, 46, 0.3); background: rgba(255,255,255,0.04); }
+.kit-icon { font-size: 2.5rem; margin-bottom: 20px; }
+.kit-card h3 { font-size: 1.3rem; margin-bottom: 12px; font-weight: 700; }
+.kit-card p { font-size: 0.95rem; color: var(--text-muted); margin-bottom: 0; }
+
+/* SECCIÓN RECORRIDO (Grid 2 Columnas) */
+.route-section { max-width: 1300px; margin: 120px auto; padding: 0 40px; }
+.route-container { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center; background: var(--glass); border: 1px solid var(--glass-border); border-radius: 40px; padding: 60px; }
+.route-info h2 { font-size: 3rem; font-weight: 900; margin-top: 10px; margin-bottom: 20px; letter-spacing: -1px; }
+.route-tabs { display: flex; gap: 15px; margin: 30px 0; border-bottom: 1px solid var(--glass-border); padding-bottom: 15px; }
+.tab-btn { background: none; border: none; color: var(--text-muted); font-size: 1rem; font-weight: 700; cursor: pointer; padding: 8px 16px; transition: all 0.3s; border-radius: 8px; }
+.tab-btn.active, .tab-btn:hover { color: var(--text-white); background: rgba(255,255,255,0.05); }
+.tab-content { display: none; animation: fadeIn 0.5s ease forwards; }
+.tab-content.active { display: block; }
+.tab-content h4 { font-size: 1.15rem; color: var(--accent-orange); margin-bottom: 8px; }
+.route-visual { position: relative; }
+.map-placeholder { background: radial-gradient(circle, #0c1527 0%, #060a13 100%); border: 1px solid var(--glass-border); height: 350px; border-radius: 24px; display: flex; align-items: center; justify-content: center; color: var(--text-muted); font-weight: 700; letter-spacing: 1px; font-size: 0.9rem; overflow: hidden; position: relative; }
+.map-pulse { position: absolute; width: 20px; height: 20px; background: var(--accent-red); border-radius: 50%; box-shadow: 0 0 0 rgba(217, 35, 46, 0.7); animation: pulse 2s infinite; }
+
+/* SECCIÓN PREGUNTAS FRECUENTES (Acordeón) */
+.faq-section { max-width: 800px; margin: 120px auto; padding: 0 20px; }
+.faq-accordion { display: flex; flex-direction: column; gap: 15px; }
+.faq-item { background: var(--glass); border: 1px solid var(--glass-border); border-radius: 16px; overflow: hidden; transition: all 0.3s; }
+.faq-question { width: 100%; background: none; border: none; padding: 24px; text-align: left; color: var(--text-white); font-size: 1.1rem; font-weight: 700; cursor: pointer; display: flex; justify-content: space-between; align-items: center; transition: all 0.3s; }
+.faq-question:hover { background: rgba(255,255,255,0.02); }
+.faq-question span { font-size: 1.5rem; color: var(--accent-orange); transition: transform 0.3s; }
+.faq-answer { max-height: 0; overflow: hidden; transition: max-height 0.3s cubic-bezier(0, 1, 0, 1); padding: 0 24px; }
+.faq-answer p { color: var(--text-muted); font-size: 0.95rem; line-height: 1.6; padding-bottom: 24px; margin: 0; }
+.faq-item.active { border-color: rgba(243, 156, 18, 0.3); background: rgba(255,255,255,0.03); }
+.faq-item.active .faq-answer { max-height: 300px; transition: max-height 0.3s cubic-bezier(1, 0, 1, 0); }
+.faq-item.active .faq-question span { transform: rotate(45deg); color: var(--accent-red); }
+
+/* SPONSORS */
+.sponsors-section { max-width: 1300px; margin: 60px auto 100px auto; padding: 0 40px; }
+.sponsors-container { display: flex; justify-content: space-between; align-items: center; gap: 30px; flex-wrap: wrap; border-top: 1px solid rgba(255, 255, 255, 0.06); padding-top: 50px; }
+.sponsors-container img { 
+    height: 38px; /* Un tamaño más imponente para que luzcan */
+    width: auto; 
+    object-fit: contain; 
+    
+    /* Color real al 100% y nitidez total desde el inicio */
+    filter: grayscale(0%) brightness(1); 
+    opacity: 1; 
+    
+    /* Eliminamos el hover viejo; se quedan estáticos, limpios y profesionales */
+}
+/* ANIMACIONES */
+@keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
+@keyframes pulse { 0% { box-shadow: 0 0 0 0 rgba(217, 35, 46, 0.7); } 70% { box-shadow: 0 0 0 20px rgba(217, 35, 46, 0); } 100% { box-shadow: 0 0 0 0 rgba(217, 35, 46, 0); } }
+
+/* RESPONSIVE */
+@media (max-width: 992px) {
+    .hero { margin: 80px 20px 40px 20px; padding: 40px 30px; text-align: center; justify-content: center; min-height: auto; }
+    h1 { font-size: 3rem; }
+    .hero-buttons { justify-content: center; }
+    .hero-stats { justify-content: center; gap: 25px; }
+    .runner { position: relative; height: 320px; right: auto; bottom: auto; margin: 40px auto 0 auto; display: block; }
+    .route-container { grid-template-columns: 1fr; padding: 30px; gap: 40px; }
+    .route-info h2, .section-title h2 { font-size: 2.2rem; }
+}
+
+
+/* ==========================================================================
+   NAVBAR COMPLETA (Ajustada a tu estructura exacta)
+   ========================================================================== */
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 2000;
+    background: rgba(6, 10, 19, 0.85); /* Fondo oscuro translúcido */
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    padding: 12px 0;
+}
+
+/* Alineación horizontal de tus elementos reales */
+.nav-container {
+    max-width: 1300px;
+    margin: 0 auto;
+    padding: 0 40px;
+    display: flex;
+    justify-content: space-between; 
+    align-items: center;
+}
+
+.logo {
+    height: 40px; /* Tamaño controlado para el logoAzul.webp */
+    width: auto;
+    display: block;
+}
+
+/* MENÚ INTERNO DE ENLACES (<nav>) */
+.nav-container nav {
+    display: flex;
+    align-items: center;
+    gap: 35px; /* Separación entre Inicio, Detalles e Iniciar Sesión */
+}
+
+/* ENLACES DE LA NAVBAR (Inicio, Detalles, etc.) */
+.nav-container nav a {
+    color: #8fa0b5 !important; /* Azul grisáceo tenue espacial, super limpio */
+    text-decoration: none !important; 
+    font-weight: 600;
+    font-size: 0.95rem;
+    letter-spacing: 0.5px;
+    transition: color 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.nav-container nav a:hover {
+    color: var(--accent-orange) !important; /* Enciende en el naranja eléctrico de la carrera (#f39c12) */
+}
+
+/* BOTÓN DE INICIAR SESIÓN (.btn-login) - Estilo Corporativo Azul */
+.btn-login {
+    background: linear-gradient(135deg, #0052a3 0%, #003366 100%) !important; /* Degradado azul Corporación Azul */
+    color: #ffffff !important; /* Texto blanco nítido para un contraste perfecto */
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    padding: 10px 24px;
+    font-weight: 700 !important;
+    font-size: 0.9rem;
+    border-radius: 30px;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
+    display: inline-block;
+    box-shadow: 0 4px 15px rgba(0, 82, 163, 0.3); /* Sombra con aura azul */
+}
+
+.btn-login:hover {
+    transform: translateY(-2px);
+    background: linear-gradient(135deg, #0066cc 0%, #004488 100%) !important; /* Azul un poco más brillante al hover */
+    box-shadow: 0 8px 25px rgba(0, 102, 204, 0.5); /* Resplandor neón azul intenso */
+    border-color: rgba(255, 255, 255, 0.25);
+}
+
+/* Separación para que la barra fija superior no tape el bloque .hero */
+.hero {
+    margin-top: 130px !important; 
+}

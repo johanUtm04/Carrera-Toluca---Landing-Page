@@ -8,28 +8,20 @@ Route::get('/', function () {
     return view('landing');
 })->name('home');
 
-Route::post('/register', function (Request $request) {
-    $request->validate([
-        'name' => 'required|string|max:255',
-        'email' => 'required|email',
-        'talla' => 'required'
-    ]);
+// 1. Landing Page (Public)
+Route::get('/', function () {
+    return view('home'); // flyer banner
+});
 
-    // Try to save to DB, but don't crash if it fails
-    try {
-        // Simple example using the default User model
-        // User::create($request->all()); 
-    } catch (\Exception $e) {
-        // Log error silently for the demo
-    }
+// 2. Authentication Routes
+Route::middleware('auth')->group(function () {
+    
+    // Step 1: Show the form to collect runner data (age, t-shirt, etc.)
+    Route::get('/register-race', [RegistrationController::class, 'create'])->name('race.create');
+    
+    // Step 2: Save the data and redirect to payment
+    Route::post('/register-race', [RegistrationController::class, 'store'])->name('race.store');
 
-    // Save to session so the Success page can greet the user
-    session(['runner_name' => $request->name]);
-
-    return redirect()->route('thanks');
-})->name('register.store');
-
-Route::get('/thanks', function () {
-    if (!session()->has('runner_name')) return redirect('/');
-    return view('thanks');
-})->name('thanks');
+    // 4. Verification / Status (From your Site Map "Ver Estado")
+    Route::get('/my-status', [ProfileController::class, 'show'])->name('race.status');
+});

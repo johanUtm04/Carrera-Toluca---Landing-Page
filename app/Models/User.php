@@ -44,4 +44,11 @@ class User extends Authenticatable
             'password' => 'hashed',
         ];
     }
+
+    //Relation with Runners Table
+    public function runner()
+    {
+    // A user has one runner profile
+        return $this->hasOne(Runner::class);
+    }
 }
