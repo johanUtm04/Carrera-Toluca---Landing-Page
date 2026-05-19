@@ -12,17 +12,42 @@
             </div>
             <div class="hero-stats">
                 <div>
-                    <strong>5K</strong>
-                    <span>Distancia</span>
+                    <strong>5K / 10K</strong>
+                    <span>Distancias</span>
                 </div>
                 <div>
-                    <strong>2026</strong>
-                    <span>Edición</span>
+                    <strong>4ª Edición</strong>
+                    <span>Cruz Azul 2026</span>
                 </div>
                 <div>
                     <strong>+800</strong>
                     <span>Corredores</span>
                 </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="detalles" class="details-section">
+        <div class="section-title">
+            <span class="mini-tag">CONVOCATORIA</span>
+            <h2>Detalles del Evento</h2>
+        </div>
+        <div class="details-grid">
+            <div class="details-card">
+                <div class="details-icon">📅</div>
+                <h3>Inscripciones</h3>
+                <p><strong>Periodo:</strong> Del 01 de junio al 31 de julio de 2026.</p>
+                <p><strong>Costo por participante:</strong> Por definir</p>
+                <p><strong>Centros de inscripción:</strong> Próximamente disponibles</p>
+            </div>
+            <div class="details-card">
+                <div class="details-icon">🏃‍♂️</div>
+                <h3>Categorías Libres</h3>
+                <p>Abierto al público en general en ambas ramas:</p>
+                <ul class="categories-list">
+                    <li>⚡ Varonil 5 km / 10 km</li>
+                    <li>⚡ Femenil 5 km / 10 km</li>
+                </ul>
             </div>
         </div>
     </section>
@@ -36,22 +61,22 @@
             <div class="kit-card">
                 <div class="kit-icon">🎽</div>
                 <h3>Playera Oficial</h3>
-                <p>Tecnología Dry-Fit premium con el diseño conmemorativo de la 3ª edición.</p>
+                <p>Tecnología Dry-Fit con el diseño conmemorativo exclusivo de la 4ª edición Cruz Azul.</p>
             </div>
             <div class="kit-card">
                 <div class="kit-icon">🏅</div>
                 <h3>Medalla de Finalista</h3>
-                <p>Metálica, con relieve exclusivo para todos los que crucen la meta.</p>
+                <p>Metálica, con relieve exclusivo para todos los que crucen la meta oficial.</p>
             </div>
             <div class="kit-card">
                 <div class="kit-icon">⏱️</div>
                 <h3>Chip de Cronometraje</h3>
-                <p>Monitoreo electrónico en tiempo real para conocer tu tiempo exacto.</p>
+                <p>Monitoreo electrónico de alta precisión para conocer tu tiempo exacto de carrera.</p>
             </div>
             <div class="kit-card">
                 <div class="kit-icon">🍎</div>
                 <h3>Kit de Recuperación</h3>
-                <p>Hidratación completa y zona de fruta/masajes en la línea de meta.</p>
+                <p>Paquete de hidratación energética, fruta y asistencia en zona de meta.</p>
             </div>
         </div>
     </section>
@@ -60,19 +85,25 @@
         <div class="route-container">
             <div class="route-info">
                 <span class="mini-tag">EL CIRCUITO</span>
-                <h2>Ruta Oficial 5K Toluca</h2>
-                <p>Un trazado plano e histórico diseñado para romper tus mejores marcas personales. Salida y meta frente al Palacio Municipal.</p>
+                <h2>Ruta e Información Oficial</h2>
+                <p>Un trazado urbano e histórico diseñado para romper tus mejores marcas personales.</p>
+                
                 <div class="route-tabs">
-                    <button class="tab-btn active" data-target="salida">📍 Salida / Meta</button>
-                    <button class="tab-btn" data-target="puntos">💧 Hidratación</button>
+                    <button class="tab-btn active" data-target="salida">📍 Ubicación</button>
+                    <button class="tab-btn" data-target="puntos">⏱️ Horarios</button>
                 </div>
+                
                 <div class="tab-content active" id="salida">
-                    <h4>Palacio Municipal de Toluca</h4>
-                    <p>Comenzamos en el corazón de la ciudad. Zona de calentamiento abierta desde las 6:30 AM. Disparo de salida puntual a las 7:30 AM.</p>
+                    <h4>Plaza Principal del Centro de Toluca</h4>
+                    <p><strong>Dirección:</strong> Av. Independencia Manzana 010, Centro, 50000 Toluca de Lerdo, Méx.</p>
+                    <p>Zona de salida y meta ubicada frente al corazón del Centro Histórico.</p>
                 </div>
+                
                 <div class="tab-content" id="puntos">
-                    <h4>Puntos de Abastecimiento</h4>
-                    <p>Estaciones de agua y asistencia médica ubicadas en el Kilómetro 2.5 y en la zona de meta para garantizar tu seguridad.</p>
+                    <h4>Horarios de Competencia</h4>
+                    <p><strong>Fecha:</strong> Domingo 23 de agosto de 2026.</p>
+                    <p><strong>Disparo de Salida:</strong> 08:00 AM en punto.</p>
+                    <p>Se recomienda llegar con 45 minutos de anticipación para bloque de calentamiento.</p>
                 </div>
             </div>
             <div class="route-visual">
@@ -84,16 +115,22 @@
         </div>
     </section>
 
-    <section class="faq-section">
+    <section id="faq" class="faq-section">
         <div class="section-title">
             <span class="mini-tag">DUDAS</span>
-            <h2>Preguntas Frecuentes</h2>
+            <h2>Preguntas Frecuentes y Reglamento</h2>
         </div>
         <div class="faq-accordion">
             <div class="faq-item">
+                <button class="faq-question">¿Cuál es el reglamento básico de participación? <span>+</span></button>
+                <div class="faq-answer">
+                    <p>El reglamento oficial detallado se publicará próximamente. Los lineamientos base estipulan el uso obligatorio del número de competidor al frente, comportamiento deportivo estricto y respetar el trazado oficial de los jueces.</p>
+                </div>
+            </div>
+            <div class="faq-item">
                 <button class="faq-question">¿Cuándo y dónde se recogen los kits? <span>+</span></button>
                 <div class="faq-answer">
-                    <p>La entrega de kits se realizará el sábado 30 de Agosto de 9:00 AM a 5:00 PM en las oficinas centrales de Corporación Azul. No olvides presentar tu comprobante de pago impreso y tu identificación oficial.</p>
+                    <p>La entrega de kits se realizará el sábado previo a la carrera (Sábado 22 de agosto de 2026). El horario tentativo y lugar oficial se confirmarán por correo a los inscritos.</p>
                 </div>
             </div>
             <div class="faq-item">

@@ -3,17 +3,57 @@ document.addEventListener('DOMContentLoaded', () => {
     const registerBtn = document.getElementById('btn-registrarme');
     const heroSection = document.querySelector('.hero');
 
-    // 1. Redirección suave al hacer clic en registrarme
+    /* ==========================================================================
+       1. REGISTRO & EFECTO DE TRANSICIÓN SUAVE
+       ========================================================================== */
     if (registerBtn) {
         registerBtn.addEventListener('click', () => {
-            registerBtn.innerText = "Abriendo...";
+            registerBtn.innerText = "Abriendo Portal...";
+            registerBtn.style.opacity = "0.8";
             setTimeout(() => {
                 window.location.href = '/register-race';
             }, 300);
         });
     }
 
-    // 2. Efecto Parallax interactivo en el Hero para pantallas grandes
+    /* ==========================================================================
+       2. EFECTO MATRIX / GLITCH EN LOS STATS (CYBERSECURITY STYLE)
+       ========================================================================== */
+    // Decodifica dinámicamente tus números del Hero para simular descifrado de datos
+    const stats = document.querySelectorAll('.hero-stats strong');
+    
+    const decryptEffect = (element, finalValue) => {
+        const chars = '0123456789X$/%#@+';
+        let iterations = 0;
+        const targetLength = finalValue.toString().length;
+
+        const interval = setInterval(() => {
+            element.innerText = finalValue.toString()
+                .split("")
+                .map((char, index) => {
+                    if(index < iterations) {
+                        return finalValue.toString()[index];
+                    }
+                    return chars[Math.floor(Math.random() * chars.length)];
+                })
+                .join("");
+            
+            if(iterations >= targetLength) {
+                clearInterval(interval);
+                element.innerText = finalValue;
+            }
+            iterations += 1 / 3;
+        }, 25);
+    };
+
+    stats.forEach(stat => {
+        const originalText = stat.innerText;
+        decryptEffect(stat, originalText);
+    });
+
+    /* ==========================================================================
+       3. EFECTO PARALLAX INTERACTIVO (HERO)
+       ========================================================================== */
     if (heroSection && runnerImg && window.innerWidth > 992) {
         heroSection.addEventListener('mousemove', (e) => {
             const rect = heroSection.getBoundingClientRect();
@@ -33,7 +73,9 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // 3. CONTROL DE PESTAÑAS (Tabs) EN LA SECCIÓN DE RECORRIDO
+    /* ==========================================================================
+       4. CONTROL DE PESTAÑAS (TABS RECORRIDO)
+       ========================================================================== */
     const tabButtons = document.querySelectorAll('.tab-btn');
     const tabContents = document.querySelectorAll('.tab-content');
 
@@ -41,32 +83,56 @@ document.addEventListener('DOMContentLoaded', () => {
         button.addEventListener('click', () => {
             const targetId = button.getAttribute('data-target');
 
-            // Quitar clase activa de botones y contenidos
             tabButtons.forEach(btn => btn.classList.remove('active'));
-            tabContents.forEach(content => content.classList.remove('active'));
+            tabContents.forEach(content => {
+                content.classList.remove('active');
+                content.style.opacity = 0;
+            });
 
-            // Activar pestaña seleccionada
             button.classList.add('active');
-            document.getElementById(targetId).classList.add('active');
+            const activeContent = document.getElementById(targetId);
+            activeContent.classList.add('active');
+            
+            // Forzar reflow rápido para la animación CSS
+            setTimeout(() => { activeContent.style.opacity = 1; }, 50);
         });
     });
 
-    // 4. ACORDEÓN DE PREGUNTAS FRECUENTES (FAQ)
+    /* ==========================================================================
+       5. ACORDEÓN DE PREGUNTAS FRECUENTES (FAQ OPTIMIZADO)
+       ========================================================================== */
     const faqQuestions = document.querySelectorAll('.faq-question');
 
     faqQuestions.forEach(question => {
         question.addEventListener('click', () => {
             const currentItem = question.parentElement;
+            const answer = currentItem.querySelector('.faq-answer');
+            const isActive = currentItem.classList.contains('active');
             
-            // Cierra los otros acordeones si se abre uno nuevo (opcional)
             document.querySelectorAll('.faq-item').forEach(item => {
                 if (item !== currentItem) {
                     item.classList.remove('active');
+                    item.querySelector('.faq-answer').style.maxHeight = null;
                 }
             });
 
-            // Conmutar el estado del acordeón actual
-            currentItem.classList.toggle('active');
+            if (!isActive) {
+                currentItem.classList.add('active');
+                answer.style.maxHeight = answer.scrollHeight + "px";
+            } else {
+                currentItem.classList.remove('active');
+                answer.style.maxHeight = null;
+            }
         });
     });
+
+    /* ==========================================================================
+       6. EASTER EGG EN CONSOLA PARA RECLUTADORES (SOC / DEFENSA)
+       ========================================================================== */
+    console.clear();
+    console.log(
+        `%c🛡️ TOLUCA 2026 SECURITY CORE %c\n\n🔒 App State: SECURE\n🎯 CSRF Protection: ENABLED\n🚀 XSS Defense: COMPLIANT WITH BLADE ENGINE\n🚦 Rate Limiter Layer: OPERATIONAL\n\n¡Hola reclutador! Si estás analizando la consola, notarás que la app fue estructurada siguiendo prácticas de desarrollo seguro. ¡Nos vemos en la entrevista técnica!`,
+        "background: #e31b23; color: white; font-size: 14px; font-weight: bold; padding: 6px 10px; border-radius: 4px; font-family: sans-serif;",
+        "color: #a2b4cc; font-size: 12px; font-family: monospace; line-height: 1.5;"
+    );
 });
