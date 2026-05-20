@@ -129,10 +129,32 @@ document.addEventListener('DOMContentLoaded', () => {
     /* ==========================================================================
        6. EASTER EGG EN CONSOLA PARA RECLUTADORES (SOC / DEFENSA)
        ========================================================================== */
-    console.clear();
+console.clear();
+
+const currentPage = window.location.pathname;
+
+if (currentPage === "/") {
     console.log(
-        `%c🛡️ TOLUCA 2026 SECURITY CORE %c\n\n🔒 App State: SECURE\n🎯 CSRF Protection: ENABLED\n🚀 XSS Defense: COMPLIANT WITH BLADE ENGINE\n🚦 Rate Limiter Layer: OPERATIONAL\n\n¡Hola reclutador! Si estás analizando la consola, notarás que la app fue estructurada siguiendo prácticas de desarrollo seguro. ¡Nos vemos en la entrevista técnica!`,
-        "background: #e31b23; color: white; font-size: 14px; font-weight: bold; padding: 6px 10px; border-radius: 4px; font-family: sans-serif;",
-        "color: #a2b4cc; font-size: 12px; font-family: monospace; line-height: 1.5;"
+        "%cWe are in the page 1 (home)",
+        "color: lime; font-size: 16px; font-weight: bold;"
     );
+
+} else if (currentPage === "/login") {
+    console.log(
+        "%cWe are in the Page 2 (Login)",
+        "color: cyan; font-size: 16px; font-weight: bold;"
+    );
+
+} else if (currentPage === "/register") {
+    console.log(
+        "%cWe are in the Page 3 (Register)",
+        "color: orange; font-size: 16px; font-weight: bold;"
+    );
+
+} else {
+    console.log(
+        "%c📄 UNKNOWN PAGE",
+        "color: gray; font-size: 16px;"
+    );
+}
 });
