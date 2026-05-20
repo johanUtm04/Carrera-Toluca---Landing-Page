@@ -10,8 +10,10 @@ class LoginController extends Controller
 {
     public function showLoginForm()
     {
+        logger("Hola que hace");
         return view('auth.login');
     }
+
     public function login(Request $request)
     {
         $credentials = $request->validate([
@@ -21,8 +23,7 @@ class LoginController extends Controller
 
         if (Auth::attempt($credentials, $request->has('remember'))) {
             $request->session()->regenerate();
-
-            return redirect()->intended('/register-race');
+            return redirect()->intended('/dashboard');
         }
 
         return back()->withErrors([

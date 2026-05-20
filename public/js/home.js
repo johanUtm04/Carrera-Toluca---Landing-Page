@@ -1,160 +1,98 @@
-document.addEventListener('DOMContentLoaded', () => {
-    const runnerImg = document.querySelector('.runner');
-    const registerBtn = document.getElementById('btn-registrarme');
-    const heroSection = document.querySelector('.hero');
-
-    /* ==========================================================================
-       1. REGISTRO & EFECTO DE TRANSICIÓN SUAVE
-       ========================================================================== */
-    if (registerBtn) {
-        registerBtn.addEventListener('click', () => {
-            registerBtn.innerText = "Abriendo Portal...";
-            registerBtn.style.opacity = "0.8";
-            setTimeout(() => {
-                window.location.href = '/register-race';
-            }, 300);
-        });
-    }
-
-    /* ==========================================================================
-       2. EFECTO MATRIX / GLITCH EN LOS STATS (CYBERSECURITY STYLE)
-       ========================================================================== */
-    // Decodifica dinámicamente tus números del Hero para simular descifrado de datos
-    const stats = document.querySelectorAll('.hero-stats strong');
-    
-    const decryptEffect = (element, finalValue) => {
-        const chars = '0123456789X$/%#@+';
-        let iterations = 0;
-        const targetLength = finalValue.toString().length;
-
-        const interval = setInterval(() => {
-            element.innerText = finalValue.toString()
-                .split("")
-                .map((char, index) => {
-                    if(index < iterations) {
-                        return finalValue.toString()[index];
-                    }
-                    return chars[Math.floor(Math.random() * chars.length)];
-                })
-                .join("");
-            
-            if(iterations >= targetLength) {
-                clearInterval(interval);
-                element.innerText = finalValue;
-            }
-            iterations += 1 / 3;
-        }, 25);
-    };
-
-    stats.forEach(stat => {
-        const originalText = stat.innerText;
-        decryptEffect(stat, originalText);
-    });
-
-    /* ==========================================================================
-       3. EFECTO PARALLAX INTERACTIVO (HERO)
-       ========================================================================== */
-    if (heroSection && runnerImg && window.innerWidth > 992) {
-        heroSection.addEventListener('mousemove', (e) => {
-            const rect = heroSection.getBoundingClientRect();
-            const x = e.clientX - rect.left - (rect.width / 2);
-            const y = e.clientY - rect.top - (rect.height / 2);
-
-            const moveX = x / -60;
-            const moveY = y / -60;
-
-            runnerImg.style.transform = `translate(${moveX}px, ${moveY}px) scale(1.02)`;
-            runnerImg.style.transition = 'transform 0.05s ease-out';
-        });
-
-        heroSection.addEventListener('mouseleave', () => {
-            runnerImg.style.transform = 'translate(0px, 0px) scale(1)';
-            runnerImg.style.transition = 'transform 0.4s ease-in-out';
-        });
-    }
-
-    /* ==========================================================================
-       4. CONTROL DE PESTAÑAS (TABS RECORRIDO)
-       ========================================================================== */
-    const tabButtons = document.querySelectorAll('.tab-btn');
-    const tabContents = document.querySelectorAll('.tab-content');
-
-    tabButtons.forEach(button => {
-        button.addEventListener('click', () => {
-            const targetId = button.getAttribute('data-target');
-
-            tabButtons.forEach(btn => btn.classList.remove('active'));
-            tabContents.forEach(content => {
-                content.classList.remove('active');
-                content.style.opacity = 0;
-            });
-
-            button.classList.add('active');
-            const activeContent = document.getElementById(targetId);
-            activeContent.classList.add('active');
-            
-            // Forzar reflow rápido para la animación CSS
-            setTimeout(() => { activeContent.style.opacity = 1; }, 50);
-        });
-    });
-
-    /* ==========================================================================
-       5. ACORDEÓN DE PREGUNTAS FRECUENTES (FAQ OPTIMIZADO)
-       ========================================================================== */
-    const faqQuestions = document.querySelectorAll('.faq-question');
-
-    faqQuestions.forEach(question => {
-        question.addEventListener('click', () => {
-            const currentItem = question.parentElement;
-            const answer = currentItem.querySelector('.faq-answer');
-            const isActive = currentItem.classList.contains('active');
-            
-            document.querySelectorAll('.faq-item').forEach(item => {
-                if (item !== currentItem) {
-                    item.classList.remove('active');
-                    item.querySelector('.faq-answer').style.maxHeight = null;
-                }
-            });
-
-            if (!isActive) {
-                currentItem.classList.add('active');
-                answer.style.maxHeight = answer.scrollHeight + "px";
+document.addEventListener("DOMContentLoaded", () => {
+    // ==========================================
+    // 1. CONTROL DE LA NAVBAR (SCROLL, BLUR Y ALTURA)
+    // ==========================================
+    const cabecera = document.querySelector(".cabecera-principal");
+    if (cabecera) {
+        window.addEventListener("scroll", () => {
+            if (window.scrollY > 30) {
+                cabecera.style.height = "75px";
+                cabecera.style.background = "rgba(255, 255, 255, 0.95)";
+                cabecera.style.backdropFilter = "blur(10px)";
+                cabecera.style.boxShadow = "0 10px 40px rgba(10, 17, 34, 0.08)";
             } else {
-                currentItem.classList.remove('active');
-                answer.style.maxHeight = null;
+                cabecera.style.height = "90px";
+                cabecera.style.background = "#ffffff";
+                cabecera.style.backdropFilter = "none";
+                cabecera.style.boxShadow = "0 4px 20px rgba(0, 0, 0, 0.04)";
+            }
+        }, { passive: true });
+    }
+
+    // ==========================================
+    // 2. INTERSECTION OBSERVER MULTI-ELEMENTOS (TU LÓGICA + AUTOMATIZACIÓN)
+    // ==========================================
+    const opciones = { threshold: 0.15, rootMargin: "0px 0px -50px 0px" };
+
+    const observer = new IntersectionObserver((entries, observer) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add("ejecutar-animacion");
+                observer.unobserve(entry.target);
+            }
+        });
+    }, opciones);
+
+    // Inyectamos tus clases de animación dinámicas al vuelo sin romper nada
+    const estiloClase = document.createElement("style");
+    estiloClase.innerHTML = `
+        /* Tu clase activa original respetada al 100% */
+        .ejecutar-animacion { transform: translate(0, 0) !important; opacity: 1 !important; }
+        
+        /* Direcciones iniciales para la cascada */
+        .animar-desde-abajo { transform: translateY(60px); opacity: 0; transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.8s ease; }
+        .animar-desde-izq { transform: translateX(-60px); opacity: 0; transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.8s ease; }
+    `;
+    document.head.appendChild(estiloClase);
+
+    // [Tu Lógica Original]: Cuadro del Footer / Sponsors Section
+    const contenedorFooter = document.querySelector(".sponsors-section");
+    if (contenedorFooter) {
+        contenedorFooter.style.transform = "translateY(50px)";
+        contenedorFooter.style.opacity = "0";
+        contenedorFooter.style.transition = "transform 0.8s ease, opacity 0.8s ease";
+        observer.observe(contenedorFooter);
+    }
+
+    // [Nueva Automatización]: Tarjetas de beneficios o cuadrículas en cascada secuencial
+    const tarjetas = document.querySelectorAll(".tarjeta-servicio, .mosaico-item");
+    tarjetas.forEach((tarjeta, index) => {
+        tarjeta.classList.add("animar-desde-abajo");
+        // Delay incremental para que se desplieguen una tras otra elegantemente
+        tarjeta.style.transitionDelay = `${index * 0.1}s`;
+        observer.observe(tarjeta);
+    });
+
+    // [Nueva Automatización]: Bloques de texto informativos laterales
+    const bloquesTexto = document.querySelectorAll(".detalles-col-texto, .servicios-destacado-rojo");
+    bloquesTexto.forEach(bloque => {
+        bloque.classList.add("animar-desde-izq");
+        observer.observe(bloque);
+    });
+});
+
+document.addEventListener("DOMContentLoaded", () => {
+    const loader = document.getElementById("loader-global");
+
+    // 1. Ocultar el loader con transicion fluida al terminar de cargar la pagina
+    if (loader) {
+        setTimeout(() => {
+            loader.classList.add("loader-oculto");
+        }, 200); // Pequeño delay de cortesía para estabilizar la UI
+    }
+
+    // 2. Activar el loader antes de salir de la página al dar clic en enlaces internos
+    document.querySelectorAll("a").forEach(enlace => {
+        enlace.addEventListener("click", (e) => {
+            const url = enlace.getAttribute("href");
+
+            // Filtrar que sea un enlace interno válido y no un ancla (#detalles), un javascript vacío, o target blank
+            if (url && !url.startsWith("#") && !url.startsWith("javascript:") && !enlace.getAttribute("target")) {
+                // Verificar que no sea el mismo enlace actual
+                if (enlace.hostname === window.location.hostname) {
+                    loader.classList.remove("loader-oculto");
+                }
             }
         });
     });
-
-    /* ==========================================================================
-       6. EASTER EGG EN CONSOLA PARA RECLUTADORES (SOC / DEFENSA)
-       ========================================================================== */
-console.clear();
-
-const currentPage = window.location.pathname;
-
-if (currentPage === "/") {
-    console.log(
-        "%cWe are in the page 1 (home)",
-        "color: lime; font-size: 16px; font-weight: bold;"
-    );
-
-} else if (currentPage === "/login") {
-    console.log(
-        "%cWe are in the Page 2 (Login)",
-        "color: cyan; font-size: 16px; font-weight: bold;"
-    );
-
-} else if (currentPage === "/register") {
-    console.log(
-        "%cWe are in the Page 3 (Register)",
-        "color: orange; font-size: 16px; font-weight: bold;"
-    );
-
-} else {
-    console.log(
-        "%c📄 UNKNOWN PAGE",
-        "color: gray; font-size: 16px;"
-    );
-}
 });
