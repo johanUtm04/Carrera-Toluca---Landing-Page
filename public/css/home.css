@@ -130,203 +130,64 @@ p{font-size:0.95rem;margin-bottom:25px;}
 .sponsors-container img{height:28px;}
 }
 
-/* ==========================================================================
-   MÓDULO DE AUTENTICACIÓN (LOGIN)
-   ========================================================================== */
-.auth-section {
-    min-height: calc(100vh - 80px); /* Resta la altura aproximada de tu navbar */
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 60px 20px;
-    margin-top: 20px; /* Evita que se encime con la navbar fija */
-    box-sizing: border-box;
-}
+/* ========================================================================== MÓDULO DE AUTENTICACIÓN (LOGIN & REGISTRO) - OPTIMIZED ========================================================================== */
+.auth-section { min-height: calc(100vh - 80px); display: flex; align-items: center; justify-content: center; padding: 30px 20px; margin-top: 0; box-sizing: border-box; }
 
-.auth-container {
-    width: 100%;
-    max-width: 450px;
-    background: linear-gradient(145deg, rgba(10, 27, 58, 0.75) 0%, rgba(6, 17, 37, 0.9) 100%);
-    border: 1px solid rgba(227, 27, 35, 0.2); /* Sutil destello rojo de Cruz Azul */
-    border-radius: 24px;
-    padding: 40px;
-    box-shadow: 0 30px 70px rgba(0, 0, 0, 0.5), inset 0 1px 0 rgba(255, 255, 255, 0.05);
-    backdrop-filter: blur(16px);
-    -webkit-backdrop-filter: blur(16px);
-    text-align: left; /* Alinea los textos interiores */
-}
+.auth-container { width: 100%; max-width: 440px; background: linear-gradient(145deg, rgba(10, 27, 58, 0.75) 0%, rgba(6, 17, 37, 0.9) 100%); border: 1px solid rgba(227, 27, 35, 0.2); border-radius: 20px; padding: 32px; box-shadow: 0 30px 70px rgba(0, 0, 0, 0.5), inset 0 1px 0 rgba(255, 255, 255, 0.05); backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px); text-align: left; }
 
-.mini-tag {
-    display: inline-block;
-    background: rgba(227, 27, 35, 0.1);
-    color: #e31b23;
-    border: 1px solid rgba(227, 27, 35, 0.25);
-    padding: 4px 12px;
-    font-size: 0.75rem;
-    font-weight: 700;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    border-radius: 20px;
-    margin-bottom: 20px;
-}
+.mini-tag { display: inline-block; background: rgba(227, 27, 35, 0.1); color: #e31b23; border: 1px solid rgba(227, 27, 35, 0.25); padding: 3px 10px; font-size: 0.7rem; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; border-radius: 20px; margin-bottom: 12px; }
 
-.auth-header h2 {
-    font-family: 'Montserrat', sans-serif;
-    font-size: 2rem;
-    font-weight: 900;
-    color: #ffffff;
-    margin: 0 0 8px 0;
-    letter-spacing: -0.5px;
-}
+.auth-header h2 { font-family: 'Montserrat', sans-serif; font-size: 1.8rem; font-weight: 900; color: #ffffff; margin: 0 0 6px 0; letter-spacing: -0.5px; }
 
-.auth-header p {
-    color: #a0aec0;
-    font-size: 0.9rem;
-    line-height: 1.4;
-    margin: 0 0 28px 0;
-}
+.auth-header p { color: #a0aec0; font-size: 0.85rem; line-height: 1.3; margin: 0 0 22px 0; }
 
-.auth-form {
-    display: flex;
-    flex-direction: column;
-    gap: 18px;
-}
+.auth-form { display: flex; flex-direction: column; gap: 14px; }
 
-.form-group {
-    display: flex;
-    flex-direction: column;
-    gap: 8px;
-}
+.form-group { display: flex; flex-direction: column; gap: 6px; }
 
-.form-group label {
-    font-size: 0.75rem;
-    font-weight: 700;
-    text-transform: uppercase;
-    letter-spacing: 0.5px;
-    color: #ffffff;
-}
+.form-row { display: flex; gap: 12px; width: 100%; }
 
-.label-row {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
+.form-row > * { flex: 1; }
 
-.forgot-link {
-    font-size: 0.75rem;
-    color: #f39c12; /* Tu naranja de acento */
-    text-decoration: none;
-    font-weight: 600;
-}
+.form-group label { font-size: 0.7rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px; color: #ffffff; }
 
-.forgot-link:hover {
-    text-decoration: underline;
-}
+.label-row { display: flex; justify-content: space-between; align-items: center; }
 
-.input-wrapper {
-    position: relative;
-    display: flex;
-    align-items: center;
-}
+.forgot-link { font-size: 0.7rem; color: #f39c12; text-decoration: none; font-weight: 600; }
 
-.input-icon {
-    position: absolute;
-    left: 16px;
-    color: #718096;
-    font-size: 1.1rem;
-    pointer-events: none;
-}
+.forgot-link:hover { text-decoration: underline; }
 
-.input-wrapper input {
-    width: 100%;
-    background: rgba(0, 0, 0, 0.3);
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    padding: 14px 16px 14px 46px;
-    border-radius: 12px;
-    color: #ffffff;
-    font-family: 'Montserrat', sans-serif;
-    font-size: 0.95rem;
-    transition: all 0.3s ease;
-    box-sizing: border-box;
-}
+.input-wrapper { position: relative; display: flex; align-items: center; }
 
-.input-wrapper input:focus {
-    outline: none;
-    border-color: rgba(227, 27, 35, 0.5); /* Al enfocar cambia al rojo institucional */
-    background: rgba(0, 0, 0, 0.5);
-    box-shadow: 0 0 15px rgba(227, 27, 35, 0.15);
-}
+.input-icon { position: absolute; left: 14px; color: #718096; font-size: 1rem; pointer-events: none; }
 
-.form-options {
-    margin: 4px 0;
-}
+.input-wrapper input { width: 100%; background: rgba(0, 0, 0, 0.3); border: 1px solid rgba(255, 255, 255, 0.1); padding: 12px 14px 12px 42px; border-radius: 10px; color: #ffffff; font-family: 'Montserrat', sans-serif; font-size: 0.9rem; transition: all 0.3s ease; box-sizing: border-box; }
 
-.remember-me {
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    cursor: pointer;
-    font-size: 0.85rem;
-    color: #a0aec0;
-    user-select: none;
-}
+.input-wrapper input:focus { outline: none; border-color: rgba(227, 27, 35, 0.5); background: rgba(0, 0, 0, 0.5); box-shadow: 0 0 15px rgba(227, 27, 35, 0.15); }
 
-.remember-me input {
-    accent-color: #e31b23;
-    width: 16px;
-    height: 16px;
-}
+.form-options { margin: 2px 0; }
 
-.btn-submit {
-    width: 100%;
-    background: linear-gradient(135deg, #e31b23 0%, #a31016 100%);
-    color: #ffffff;
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    padding: 15px;
-    font-size: 0.95rem;
-    font-weight: 800;
-    border-radius: 12px;
-    cursor: pointer;
-    text-transform: uppercase;
-    letter-spacing: 0.5px;
-    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-    box-shadow: 0 6px 20px rgba(227, 27, 35, 0.2);
-    margin-top: 10px;
-}
+.remember-me { display: inline-flex; align-items: center; gap: 8px; cursor: pointer; font-size: 0.8rem; color: #a0aec0; user-select: none; }
 
-.btn-submit:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 10px 25px rgba(227, 27, 35, 0.4);
-    border-color: rgba(255, 255, 255, 0.2);
-}
+.remember-me input { accent-color: #e31b23; width: 14px; height: 14px; }
 
-.auth-footer {
-    margin-top: 28px;
-    border-top: 1px solid rgba(255, 255, 255, 0.08);
-    padding-top: 20px;
-    text-align: center;
-    font-size: 0.85rem;
-    color: #a0aec0;
-}
+.payment-card-option { background: rgba(255, 255, 255, 0.03); border: 1px solid rgba(255, 255, 255, 0.08); padding: 12px; border-radius: 10px; transition: all 0.2s ease; }
 
-.auth-footer a {
-    color: #ffffff;
-    text-decoration: none;
-    font-weight: 700;
-    transition: color 0.2s ease;
-}
+.payment-card-option:hover { border-color: rgba(227, 27, 35, 0.3); background: rgba(255, 255, 255, 0.05); }
 
-.auth-footer a:hover {
-    color: #f39c12;
-}
+.btn-submit { width: 100%; background: linear-gradient(135deg, #e31b23 0%, #a31016 100%); color: #ffffff; border: 1px solid rgba(255, 255, 255, 0.1); padding: 12px; font-size: 0.9rem; font-weight: 800; border-radius: 10px; cursor: pointer; text-transform: uppercase; letter-spacing: 0.5px; transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1); box-shadow: 0 6px 20px rgba(227, 27, 35, 0.2); margin-top: 6px; }
+
+.btn-submit:hover { transform: translateY(-1px); box-shadow: 0 8px 20px rgba(227, 27, 35, 0.4); border-color: rgba(255, 255, 255, 0.2); }
+
+.auth-footer { margin-top: 20px; border-top: 1px solid rgba(255, 255, 255, 0.08); padding-top: 14px; text-align: center; font-size: 0.8rem; color: #a0aec0; }
+
+.auth-footer a { color: #ffffff; text-decoration: none; font-weight: 700; transition: color 0.2s ease; }
+
+.auth-footer a:hover { color: #f39c12; }
 
 /* Responsivo para móviles */
 @media (max-width: 480px) {
-    .auth-container {
-        padding: 30px 20px;
-        border-radius: 20px;
-    }
-    .auth-header h2 {
-        font-size: 1.7rem;
-    }
+    .auth-container { padding: 24px 16px; border-radius: 16px; }
+    .auth-header h2 { font-size: 1.5rem; }
+    .form-row { flex-direction: column; gap: 10px; }
 }

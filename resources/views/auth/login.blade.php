@@ -12,7 +12,7 @@
                 <p>Ingresa tus credenciales para acceder al sistema de la 4ª Carrera</p>
             </div>
 
-            <form action="/login" method="POST" class="auth-form">
+            <form action="/HOLA" method="POST" class="auth-form">
                 @csrf
 
                 <div class="form-group">

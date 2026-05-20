@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\RegistrationController;
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\Auth\LoginController;
 
 /*
 |--------------------------------------------------------------------------
@@ -16,15 +17,16 @@ Route::get('/', function () {
 })->name('home');
 
 // 2. Formulario de Login (Aquí renderizas el formulario premium que hicimos)
-Route::get('/login', function () {
-    return view('auth.login');
-})->name('login');
+Route::get('/login', [LoginController::class, 'showLoginForm'])->name('login');
+Route::post('/login', [LoginController::class, 'login']);
+
+Route::post('/logout', [LoginController::class, 'logout'])->name('logout');
+
 
 // 3. Formulario de Registro (Crear Cuenta)
 Route::get('/register', function () {
     return view('auth.register');
 })->name('register');
-
 
 /*
 |--------------------------------------------------------------------------
@@ -33,7 +35,7 @@ Route::get('/register', function () {
 */
 Route::middleware('auth')->group(function () {
     
-    // Paso 1: Mostrar el formulario para capturar datos del corredor (Talla de playera, edad, etc.)
+    //Form to take runner's data
     Route::get('/register-race', [RegistrationController::class, 'create'])->name('race.create');
     
     // Paso 2: Guardar los datos del corredor en la Base de Datos
