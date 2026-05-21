@@ -52,12 +52,18 @@
                 </div>
             </div>
 
-            <div class="hero-bloque-imagen animate-derecha" style="display: flex; align-items: center; justify-content: center;">
-                <div class="servicios-destacado-rojo" style="width: 100%; padding: 50px 40px; border-radius: 8px; box-shadow: 0 20px 40px rgba(0,0,0,0.3); box-sizing: border-box;">
-                    <span style="font-size: 0.8rem; font-weight: 900; letter-spacing: 3px; display: block; margin-bottom: 15px; color: rgba(255,255,255,0.8);">CORPORACIÓN AZUL</span>
-                    <h2 class="destacado-titulo" style="font-size: 2.6rem; line-height: 1; margin: 0; font-weight: 800; color: #fff;">Tu Esfuerzo<br><span style="font-weight: 500; color: #111728;">Tiene Control</span><br>Electrónico</h2>
-                </div>
-            </div>
+<div class="hero-bloque-imagen animate-derecha" style="display: flex; align-items: center; justify-content: center; width: 100%; height: 100%;">
+    <div class="tarjeta-control-electronico">
+        <div class="cortina-deslizable"></div>
+        
+        <div class="contenido-tarjeta">
+            <span class="subtitulo-marca">CORPORACIÓN AZUL</span>
+            <h2 class="destacado-titulo">
+                Tu Esfuerzo<br><span class="texto-enfasis">Tiene Control</span><br>Electrónico
+            </h2>
+        </div>
+    </div>
+</div>
 
         </div>
     </section>
