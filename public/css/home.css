@@ -1345,3 +1345,137 @@ main.contenedor-principal {
 }
 
 
+/* ==========================================================================
+   JOHAN LANDING 2026 - RUNNER DASHBOARD SPECIFIC CLASSES
+   ========================================================================== */
+
+.johan-panel-section {
+    min-height: 100vh;
+    padding: 80px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #0b0f19;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.johan-card {
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.4);
+    width: 100%;
+}
+
+.johan-tag {
+    font-size: 0.75rem;
+    font-weight: 900;
+    letter-spacing: 2px;
+    color: #ff1420;
+    text-transform: uppercase;
+    margin-bottom: 15px;
+    display: inline-block;
+}
+
+.johan-header h2 {
+    font-size: 2rem;
+    font-weight: 800;
+    line-height: 1.2;
+    color: #fff;
+    margin: 0 0 10px 0;
+}
+
+.johan-header p {
+    font-size: 0.95rem;
+    color: rgba(255, 255, 255, 0.6);
+    margin: 0 0 30px 0;
+}
+
+.johan-grid-stat {
+    background: rgba(15, 23, 42, 0.6);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    padding: 16px;
+    border-radius: 8px;
+    text-align: center;
+}
+
+.johan-alert {
+    background: rgba(255, 20, 32, 0.05);
+    border: 1px solid rgba(255, 20, 32, 0.2);
+    border-left: 4px solid #ff1420;
+    padding: 16px;
+    border-radius: 4px;
+    margin-bottom: 30px;
+}
+
+.johan-table-title {
+    color: #fff;
+    margin-top: 0;
+    margin-bottom: 20px;
+    font-weight: 700;
+    font-size: 1.15rem;
+    letter-spacing: 0.5px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    padding-bottom: 12px;
+    text-transform: uppercase;
+}
+
+.johan-table tr {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.johan-table td {
+    padding: 14px 0;
+}
+
+.johan-badge-pending {
+    background: rgba(255, 20, 32, 0.15);
+    color: #ff1420;
+    padding: 6px 14px;
+    border-radius: 4px;
+    font-weight: 700;
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    border: 1px solid rgba(255, 20, 32, 0.3);
+    letter-spacing: 1px;
+}
+
+.johan-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    padding: 14px;
+    font-size: 0.9rem;
+    font-weight: 700;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-family: 'Montserrat', sans-serif;
+    box-sizing: border-box;
+}
+
+.johan-btn-secondary {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    color: #fff;
+}
+
+.johan-btn-secondary:hover {
+    background: rgba(255, 255, 255, 0.1);
+    border-color: rgba(255, 255, 255, 0.3);
+}
+
+.johan-btn-danger {
+    background: transparent;
+    border: 1px solid rgba(255, 20, 32, 0.4);
+    color: #ff1420;
+}
+
+.johan-btn-danger:hover {
+    background: rgba(255, 20, 32, 0.1);
+    border-color: #ff1420;
+}
