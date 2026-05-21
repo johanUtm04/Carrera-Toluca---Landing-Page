@@ -1479,3 +1479,54 @@ main.contenedor-principal {
     background: rgba(255, 20, 32, 0.1);
     border-color: #ff1420;
 }
+
+.cabecera-acciones {
+    display: flex;
+    align-items: center;    /* Vertical alignment for search icon and buttons */
+    gap: 15px;              /* Uniform spacing */
+    height: 100%;           /* Adapts perfectly to the 90px navbar mother container */
+}
+
+/* Base Style for the Guest Login Button */
+.johan-btn-nav-auth {
+    display: inline-block !important;
+    padding: 12px 24px !important; /* Slightly optimized padding for vertical balance */
+    background: #ff1420 !important; /* Corporate Identity Red */
+    color: #ffffff !important; 
+    font-size: 0.85rem !important;
+    font-weight: 800 !important;
+    letter-spacing: 1px !important;
+    text-decoration: none !important;
+    border-radius: 4px !important;
+    border: none !important;
+    text-transform: uppercase !important;
+    transition: background 0.3s ease !important;
+    white-space: nowrap !important; /* Prevents text from breaking into two lines */
+}
+
+.johan-btn-nav-auth:hover {
+    background: #cc0f19 !important;
+}
+
+/* Style for the Authenticated Athlete Profile Button */
+.johan-btn-nav-profile {
+    display: inline-block !important;
+    padding: 12px 24px !important;
+    background: #111728 !important; /* Elegant deep corporate navy dark background */
+    color: #ffffff !important; /* Sharp white text for contrast */
+    font-size: 0.85rem !important;
+    font-weight: 700 !important;
+    letter-spacing: 1px !important;
+    text-decoration: none !important;
+    border: 1px solid rgba(255, 255, 255, 0.15) !important;
+    border-radius: 4px !important;
+    text-transform: uppercase !important;
+    transition: all 0.3s ease !important;
+    white-space: nowrap !important;
+}
+
+.johan-btn-nav-profile:hover {
+    background: #ff1420 !important; /* Flips completely to brand red on hover */
+    color: #ffffff !important;
+    border-color: #ff1420 !important;
+}
