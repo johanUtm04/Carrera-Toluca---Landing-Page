@@ -18,7 +18,6 @@ public function store(Request $request)
         'password' => 'required|string|min:8',
     ]);
 
-    // Create the user in your now securely backed-up database!
     $user = User::create([
         'name' => $request->name,
         'email' => $request->email,

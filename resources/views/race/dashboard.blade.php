@@ -5,7 +5,7 @@
             <span class="johan-tag">Panel Oficial del Corredor</span>
 
             <div class="johan-header">
-                <h2>¡Bienvenido de vuelta,<br>{{ $user->name }}!</h2>
+                <h2>¡Bienvenido,<br>{{ $user->name }}!</h2>
                 <p>Aquí tienes los detalles oficiales de tu participación en el circuito.</p>
             </div>
 
