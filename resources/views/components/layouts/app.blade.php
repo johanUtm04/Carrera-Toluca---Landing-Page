@@ -35,12 +35,8 @@
                     <a href="#" class="menu-enlace">Corredores <span class="flecha-menu">▼</span></a>
                     <div class="menu-dropdown">
                         <a href="/login">Mi Panel de Atleta</a>
-                        <a href="#detalles">Tiempos y Chips</a>
+                        {{-- <a href="#detalles">Tiempos y Chips</a> --}}
                     </div>
-                </div>
-
-                <div class="menu-item">
-                    <a href="#recorrido" class="menu-enlace">Recorrido</a>
                 </div>
 
                 <div class="menu-item">
