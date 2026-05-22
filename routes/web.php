@@ -22,13 +22,11 @@ Route::post('/login', [LoginController::class, 'login']);
 
 Route::post('/logout', [LoginController::class, 'logout'])->name('logout');
 
-
 // 3. Formulario de Registro (Crear Cuenta)
 Route::get('/register', function () {
     return view('auth.register');
 })->name('register');
 Route::post('/register', [RegistrationController::class, 'store']);
-
 
 /*
 |--------------------------------------------------------------------------
@@ -36,13 +34,8 @@ Route::post('/register', [RegistrationController::class, 'store']);
 |--------------------------------------------------------------------------
 */
 Route::middleware('auth')->group(function () {
-
     Route::get('/register-race', [ChooseRaceController::class, 'index'])->middleware('auth')->name('race.portal');
-
     Route::post('/register-race', [ChooseRaceController::class, 'store'])->middleware('auth')->name('race.store');
-
     Route::get('/my-status', [ProfileController::class, 'show'])->name('race.status');
-
     Route::get('/dashboard', [ChooseRaceController::class, 'index'])->name('dashboard');
-
 });

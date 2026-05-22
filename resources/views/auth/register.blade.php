@@ -33,13 +33,13 @@
                     </div>
 
                     <div class="form-group" style="margin-bottom: 22px;">
-                        <label for="password" style="display: block; font-weight: 700; margin-bottom: 8px; font-size: 0.8rem; letter-spacing: 0.5px; color: rgba(255,255,255,0.8);">CLAVE DE ACCESO</label>
+                        <label for="password" style="display: block; font-weight: 700; margin-bottom: 8px; font-size: 0.8rem; letter-spacing: 0.5px; color: rgba(255,255,255,0.8);">CREA UNA CONTRASEÑA</label>
                         <input type="password" id="password" name="password" placeholder="Mínimo 8 caracteres" required autocomplete="new-password"
                                style="width: 100%; padding: 14px; background: rgba(15, 23, 42, 0.6); border: 1px solid rgba(255,255,255,0.15); border-radius: 6px; color: #fff; font-family: 'Montserrat', sans-serif; font-size: 0.9rem; box-sizing: border-box;">
                     </div>
 
                     <div class="form-group" style="margin-bottom: 22px;">
-                        <label for="password_confirmation" style="display: block; font-weight: 700; margin-bottom: 8px; font-size: 0.8rem; letter-spacing: 0.5px; color: rgba(255,255,255,0.8);">CONFIRMAR CLAVE DE ACCESO</label>
+                        <label for="password_confirmation" style="display: block; font-weight: 700; margin-bottom: 8px; font-size: 0.8rem; letter-spacing: 0.5px; color: rgba(255,255,255,0.8);">CONFIRMA TU CONTRASEÑA</label>
                         <input type="password" id="password_confirmation" name="password_confirmation" placeholder="Repite tu contraseña" required autocomplete="new-password"
                                style="width: 100%; padding: 14px; background: rgba(15, 23, 42, 0.6); border: 1px solid rgba(255,255,255,0.15); border-radius: 6px; color: #fff; font-family: 'Montserrat', sans-serif; font-size: 0.9rem; box-sizing: border-box;">
                     </div>

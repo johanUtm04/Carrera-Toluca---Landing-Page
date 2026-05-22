@@ -8,11 +8,6 @@
                 <h1 class="hero-titulo">Tecnología &<br>Rendimiento<br>Running</h1>
                 <p class="hero-descripcion">La 4ª edición de la carrera que desafía tu resistencia, tu disciplina y tu mentalidad en el asfalto urbano.</p>
                 <button id="btn-registrarme" class="boton-accion">Convocatoria Oficial »</button>
-                
-                <div class="hero-flechas-carrusel">
-                    <span class="flecha-izq">←</span>
-                    <span class="flecha-der">→</span>
-                </div>
             </div>
 
             <div class="hero-bloque-imagen animate-derecha">
