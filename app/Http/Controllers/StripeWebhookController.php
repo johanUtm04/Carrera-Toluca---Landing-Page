@@ -9,6 +9,7 @@ use Illuminate\Support\Log;
 class StripeWebhookController extends Controller
 {
     public function handleWebhook(Request $request)
+    //here appends the whisper =)
     {
         // Get the data packet sent by Stripe
         $payload = $request->all();
@@ -30,7 +31,6 @@ class StripeWebhookController extends Controller
                 Log::warning("Stripe session found, but no matching user in database. Somthings is wrong. Session ID: {$session['id']}");
             }
         }
-
         // We are acknowledging receipt of the event
         return response()->json(['status' => 'success'], 200);
     }
