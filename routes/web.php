@@ -23,6 +23,8 @@ Route::post('/login', [LoginController::class, 'login']);
 
 Route::post('/logout', [LoginController::class, 'logout'])->name('logout');
 
+Route::get('/payment-success', [RegistrationController::class, 'paymentSuccess'])->name('checkout.success');
+
 // 3. Formulario de Registro (Crear Cuenta)
 Route::get('/register', function () {
     return view('auth.register');
