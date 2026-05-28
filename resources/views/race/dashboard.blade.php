@@ -50,7 +50,15 @@
                     <tr style="border-bottom: none;">
                         <td style="font-weight: 700; color: #fff; padding-bottom: 0;">Estatus del Pago:</td>
                         <td style="text-align: right; padding-bottom: 0;">
+                        @if(auth()->user()->payment_status === 'paid')
+                                <!-- If the user paid, show a beautiful green badge -->
+                            <span style="background: #10b981; color: #fff; padding: 4px 10px; border-radius: 4px; font-size: 0.75rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px;">
+                                Pagado
+                            </span>
+                        @else
+                            <!-- If not, show Johan's original pending badge -->
                             <span class="johan-badge-pending">Pendiente</span>
+                        @endif
                         </td>
                     </tr>
                 </table>

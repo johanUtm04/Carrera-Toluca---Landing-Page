@@ -23,8 +23,6 @@ Route::post('/login', [LoginController::class, 'login']);
 
 Route::post('/logout', [LoginController::class, 'logout'])->name('logout');
 
-Route::get('/payment-success', [RegistrationController::class, 'paymentSuccess'])->name('checkout.success');
-
 // 3. Formulario de Registro (Crear Cuenta)
 Route::get('/register', function () {
     return view('auth.register');
@@ -33,15 +31,16 @@ Route::post('/register', [RegistrationController::class, 'store']);
 
 // 4. The endpoint where Stripe will post payment confirmation data
 Route::post('/stripe/webhook', [StripeWebhookController::class, 'handleWebhook']);
-
+// 5. Success Page after payment
+Route::get('/payment-success', [RegistrationController::class, 'paymentSuccess'])->name('checkout.success');
 /*
 |--------------------------------------------------------------------------
 | Rutas Protegidas (Solo para usuarios autenticados)
 |--------------------------------------------------------------------------
 */
-Route::middleware('auth')->group(function () {
-    Route::get('/register-race', [ChooseRaceController::class, 'index'])->middleware('auth')->name('race.portal');
-    Route::post('/register-race', [ChooseRaceController::class, 'store'])->middleware('auth')->name('race.store');
+Route::middleware('auth:web')->group(function () {
+    Route::get('/register-race', [ChooseRaceController::class, 'index'])->name('race.portal');
+    Route::post('/register-race', [ChooseRaceController::class, 'store'])->name('race.store');
     Route::get('/my-status', [ProfileController::class, 'show'])->name('race.status');
     Route::get('/dashboard', [ChooseRaceController::class, 'index'])->name('dashboard');
 });

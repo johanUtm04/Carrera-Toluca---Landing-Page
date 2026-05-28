@@ -4,8 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\User;
-use Illuminate\Support\Log;
-
+use Illuminate\Support\Facades\Log;
 class StripeWebhookController extends Controller
 {
     public function handleWebhook(Request $request)
@@ -13,7 +12,8 @@ class StripeWebhookController extends Controller
     {
         // Get the data packet sent by Stripe
         $payload = $request->all();
-
+        Log::info('Stripe Webhook Pinged! Raw Data:', $payload);
+        
         // Check if this is the exact event we care about
         if (isset($payload['type']) && $payload['type'] === 'checkout.session.completed') {
             

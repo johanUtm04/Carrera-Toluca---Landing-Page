@@ -10,7 +10,6 @@ class LoginController extends Controller
 {
     public function showLoginForm()
     {
-        logger("Hola que hace");
         return view('auth.login');
     }
 

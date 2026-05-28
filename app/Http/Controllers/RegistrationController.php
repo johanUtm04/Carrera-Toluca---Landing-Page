@@ -14,6 +14,7 @@ class RegistrationController extends Controller
     {
         //Count the users that paid
         $paidRunnersCount = User::where('payment_status', 'paid')->count();
+
         if ($paidRunnersCount >= 800) {
             //Tp show Sold Out page
             return redirect()->route('race.soldout');
@@ -31,9 +32,11 @@ class RegistrationController extends Controller
             'password' => Hash::make($request->password),
         ]);
 
-        // Create Stripe Checkout Session
+        // Create Stripe Checkout Session (takes your secret Stripe key from your .env)
         Stripe::setApiKey(env('STRIPE_SECRET'));
-        $checkoutSession = Session::create([
+
+        // All this calls Stripe's servers to build a brand new, empty checkout page
+        $checkoutSession = Session::create([    
             'payment_method_types' => ['card'],
             'line_items' => [[
                 'price_data' => [
