@@ -33,6 +33,9 @@ Route::post('/register', [RegistrationController::class, 'store']);
 Route::post('/stripe/webhook', [StripeWebhookController::class, 'handleWebhook']);
 // 5. Success Page after payment
 Route::get('/payment-success', [RegistrationController::class, 'paymentSuccess'])->name('checkout.success');
+// 6. Sold Out Page if the limit of paid runners is reached
+Route::get('/sold-out', [RegistrationController::class, 'soldOut'])->name('race.soldout');
+
 /*
 |--------------------------------------------------------------------------
 | Rutas Protegidas (Solo para usuarios autenticados)
