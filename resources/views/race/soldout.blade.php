@@ -1,42 +1,61 @@
-<!DOCTYPE html>
-<html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Inscripciones Agotadas - Circuito Toluca 2026</title>
-    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
-</head>
-<body class="bg-slate-900 text-slate-100 min-h-screen flex items-center justify-center font-sans antialiased">
-
-    <div class="max-w-md w-full mx-4 text-center bg-slate-800 p-8 rounded-2xl shadow-xl border border-slate-700">
-        
-        <div class="w-16 h-16 bg-amber-500/10 text-amber-500 rounded-full flex items-center justify-center mx-auto mb-6">
-            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-8 h-8">
-                <path stroke-linecap="round" stroke-linejoin="round" d="M12 9v3.75m0-10.036A11.959 11.959 0 0 1 3.598 6 11.99 11.99 0 0 0 3 9.75c0 5.592 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.31-.21-2.57-.598-3.75h-.152c-3.196 0-6.1-1.249-8.25-3.286Zm0 13.036h.008v.008H12v-.008Z" />
-            </svg>
-        </div>
-
-        <h1 class="text-2xl font-bold tracking-tight text-white mb-3">
-            Cupo Completo
-        </h1>
-        
-        <p class="text-slate-400 text-sm leading-relaxed mb-6">
-            Lo sentimos, las inscripciones para la 4ª Carrera Corporación Azul (Circuito Toluca 2026) han alcanzado su límite máximo de 800 atletas pagados.
-        </p>
-
-        <div class="bg-slate-900/50 rounded-xl p-4 border border-slate-700/50 mb-6">
-            <span class="text-xs font-semibold text-slate-500 uppercase tracking-wider block mb-1">
-                Estado del Evento
-            </span>
-            <span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full text-xs font-medium bg-rose-500/10 text-rose-400">
+<x-layouts.app title="Cupo Completo">
+    <section class="johan-panel-section">
+        <div class="johan-card" style="max-width: 600px;">
+            
+            <span class="johan-tag" style="background: rgba(245, 158, 11, 0.2); color: #f59e0b; border: 1px solid rgba(245, 158, 11, 0.3);">
                 Inscripciones Cerradas
             </span>
+
+            <div class="johan-header">
+                <h2>Inscripciones Agotadas<br>Circuito Toluca 2026</h2>
+                <p>Hemos alcanzado el límite máximo de atletas registrados para este evento. ¡Muchas gracias por tu interés!</p>
+            </div>
+
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-bottom: 24px;">
+                <div class="johan-grid-stat">
+                    <div style="font-size: 0.7rem; color: rgba(255,255,255,0.4); text-transform: uppercase; letter-spacing: 1px; margin-bottom: 4px;">Cupo Total del Evento</div>
+                    <div style="font-size: 1.1rem; color: #f59e0b; font-weight: 700;">800 Atletas</div>
+                </div>
+                <div class="johan-grid-stat">
+                    <div style="font-size: 0.7rem; color: rgba(255,255,255,0.4); text-transform: uppercase; letter-spacing: 1px; margin-bottom: 4px;">Estatus Actual</div>
+                    <div style="font-size: 1.1rem; color: #ef4444; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px;">Agotado</div>
+                </div>
+            </div>
+
+            <div class="johan-alert" style="background: rgba(239, 68, 68, 0.1); border-left: 4px solid #ef4444;">
+                <div style="font-size: 0.85rem; color: rgba(255, 255, 255, 0.9); line-height: 1.5;">
+                    <strong style="color: #fff; text-transform: uppercase; font-size: 0.8rem; letter-spacing: 0.5px; display: block; margin-bottom: 2px;">¡Límite de Control Alcanzado!</strong> 
+                    El sistema de validación ha cerrado automáticamente los registros debido a que se completó el aforo seguro de competidores pagados en la base de datos.
+                </div>
+            </div>
+
+            <div style="background: rgba(15, 23, 42, 0.4); border: 1px solid rgba(255, 255, 255, 0.05); padding: 24px; border-radius: 8px; margin-bottom: 30px;">
+                <h3 class="johan-table-title">Información del Evento</h3>
+                
+                <table class="johan-table" style="width: 100%; color: rgba(255,255,255,0.6); font-size: 0.9rem; border-collapse: collapse;">
+                    <tr>
+                        <td style="font-weight: 700; color: #fff;">Organizador:</td>
+                        <td style="text-align: right; color: #ff1420; font-weight: 700; text-transform: uppercase;">4ª Carrera Corporación Azul</td>
+                    </tr>
+                    <tr>
+                        <td style="font-weight: 700; color: #fff;">Sede del Circuito:</td>
+                        <td style="text-align: right; color: #fff; font-weight: 600;">Toluca, Estado de México</td>
+                    </tr>
+                    <tr style="border-bottom: none;">
+                        <td style="font-weight: 700; color: #fff; padding-bottom: 0;">Disponibilidad:</td>
+                        <td style="text-align: right; padding-bottom: 0;">
+                            <span style="background: #ef4444; color: #fff; padding: 2px 8px; border-radius: 4px; font-size: 0.75rem; font-weight: 700; text-transform: uppercase;">Sin Lugares</span>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+
+            <div style="display: flex; gap: 16px;">
+                <a href="/" class="johan-btn" style="width: 100%; background: linear-gradient(135deg, #0b3472, #002244); border: 1px solid #0b3472; text-align: center; color: white; text-decoration: none; display: flex; align-items: center; justify-content: center; font-weight: bold; border-radius: 4px; padding: 12px 0;">
+                    ← Volver a la Página Principal
+                </a>
+            </div>
+
         </div>
-
-        <a href="{{ route('home') }}" class="inline-flex w-full items-center justify-center px-5 py-3 text-sm font-medium text-slate-900 bg-white hover:bg-slate-100 rounded-xl transition duration-200 shadow-sm">
-            Volver al inicio
-        </a>
-    </div>
-
-</body>
-</html>
+    </section>
+</x-layouts.app>

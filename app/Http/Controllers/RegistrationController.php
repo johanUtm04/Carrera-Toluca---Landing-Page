@@ -70,7 +70,7 @@ class RegistrationController extends Controller
         $paidRunnersCount = User::where('payment_status', 'paid')->count();
 
         if ($paidRunnersCount < 2) {
-        return redirect()->route('register');
+            return redirect()->route('register');
         }
 
         return view('race.soldout');
