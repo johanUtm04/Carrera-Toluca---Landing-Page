@@ -23,6 +23,34 @@ Welcome! This is a modern web-based registration and automated race tracking sys
 
 ---
 
+## Application Preview & User Interface Flow
+
+Below are the main user interface flows and functional views implemented across the system platform:
+
+### 1. Landing & Home Interface
+The main public entryway detailing event specifications and clear registration pathways for competing athletes.
+
+<p align="center">
+  <img src="public/images/capturaHome.png" alt="Home Interface Preview 1" width="45%" />
+  <img src="public/images/capturaHome2.png" alt="Home Interface Preview 2" width="45%" />
+</p>
+<p align="center">
+  <img src="public/images/capturaHome3.png" alt="Home Interface Preview 3" width="45%" />
+  <img src="public/images/capturaHome4.png" alt="Home Interface Preview 4" width="45%" />
+</p>
+
+### 2. Registration Intake Form
+Secure form field captures equipped with input validation constraints and frontend security mechanisms.
+![Registration Form Preview](public/images/capturaRegisterForm.png)
+
+### 3. Secure Checkout Gateway (Stripe)
+Integrated transaction interface processing itemized payments via secure credit and debit card networks.
+![Stripe Payment Preview](public/images/capturaPay.png)
+
+### 4. Athlete Dashboard Management Panel
+The authenticated user workspace displaying real-time database validation metrics and payment verification logs.
+![Athlete Dashboard Preview](public/images/capturaDashboardCorredor.png)
+
 ## Database Schema Quick Reference
 
 The application extends the native authentication migration structures to hold real-time registration data vectors:
