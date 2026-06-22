@@ -14,7 +14,7 @@ use App\Http\Controllers\StripeWebhookController;
 */
 
 // 1. Landing Page Principal (Muestra el hero, el corredor, etc.)
-Route::get('/', function () { return view('home'); })->name('home');
+Route::get('/', function () { return view('index'); })->name('home');
 
 // Bringing the Form to the User
 Route::get('/login', [LoginController::class, 'showLoginForm'])->name('login');
