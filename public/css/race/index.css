@@ -644,3 +644,194 @@
 }
 
 
+
+
+/* ==========================================================================
+   OFFICIAL CALL SECTION
+   ========================================================================== */
+
+.official-call-section {
+    width: 100%;
+    background: #ffffff;
+    padding: 75px 20px 85px;
+}
+
+.official-call-container {
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.official-call-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 70px 80px;
+    margin-top: 70px;
+}
+
+.official-call-card {
+    color: #333333;
+}
+
+.official-call-card-title {
+    color: #263447;
+    font-size: 0.95rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
+    margin: 0 0 20px;
+}
+
+.official-call-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.official-call-list li {
+    position: relative;
+    display: flex;
+    align-items: flex-start;
+    gap: 9px;
+    color: #333333;
+    font-size: 0.92rem;
+    line-height: 1.55;
+    margin-bottom: 12px;
+}
+
+.official-call-list li span,
+.official-call-subgroup h4 span,
+.inline-check {
+    flex: 0 0 auto;
+    width: 15px;
+    height: 15px;
+    margin-top: 3px;
+    border: 1px solid var(--accent-blue);
+    border-radius: 50%;
+    position: relative;
+}
+
+.official-call-list li span::after,
+.official-call-subgroup h4 span::after,
+.inline-check::after {
+    content: "✓";
+    position: absolute;
+    top: -5px;
+    left: 2px;
+    color: var(--accent-blue);
+    font-size: 0.85rem;
+    font-weight: 800;
+}
+
+.official-call-subgroup {
+    margin-bottom: 26px;
+}
+
+.official-call-subgroup h4 {
+    display: flex;
+    align-items: flex-start;
+    gap: 9px;
+    color: #263447;
+    font-size: 0.9rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    margin: 0 0 10px;
+}
+
+.official-call-subgroup p,
+.official-call-text {
+    color: #333333;
+    font-size: 0.92rem;
+    line-height: 1.55;
+    margin: 0 0 8px;
+}
+
+.official-call-warning {
+    font-weight: 800;
+}
+
+.inline-check {
+    display: inline-block;
+    vertical-align: middle;
+    margin-right: 6px;
+    margin-top: 0;
+}
+
+.official-call-actions {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 22px;
+}
+
+.official-call-actions-center {
+    justify-content: center;
+}
+
+.outline-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    min-width: 112px;
+    padding: 8px 16px;
+
+    color: var(--accent-blue);
+    background: transparent;
+    border: 1px solid var(--accent-blue);
+    border-radius: 4px;
+
+    font-size: 0.85rem;
+    font-weight: 700;
+    letter-spacing: 0.04em;
+    text-decoration: none;
+
+    transition:
+        background 0.25s ease,
+        color 0.25s ease,
+        transform 0.25s ease,
+        box-shadow 0.25s ease;
+}
+
+.outline-button:hover {
+    background: var(--accent-blue);
+    color: #ffffff;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 18px rgba(0, 120, 200, 0.18);
+}
+
+/* ==========================================================================
+   RESPONSIVE
+   ========================================================================== */
+
+@media (max-width: 900px) {
+    .official-call-grid {
+        grid-template-columns: 1fr;
+        gap: 45px;
+        margin-top: 50px;
+    }
+
+    .official-call-actions,
+    .official-call-actions-center {
+        justify-content: flex-start;
+    }
+}
+
+@media (max-width: 600px) {
+    .official-call-section {
+        padding: 60px 18px 65px;
+    }
+
+    .official-call-grid {
+        gap: 38px;
+    }
+
+    .official-call-card-title {
+        font-size: 0.9rem;
+    }
+
+    .official-call-list li,
+    .official-call-subgroup p,
+    .official-call-text {
+        font-size: 0.88rem;
+    }
+}
+

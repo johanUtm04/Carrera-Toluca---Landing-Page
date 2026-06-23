@@ -13,6 +13,7 @@
                                 ])
     @include('race.partials._hero')
     @include('race.partials._cause')
+    @include('race.partials._official-call')
     @include('race.partials._services')
     @include('race.partials._video')
     @include('race.partials._kit-details')
