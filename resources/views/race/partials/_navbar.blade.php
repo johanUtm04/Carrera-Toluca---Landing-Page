@@ -14,11 +14,11 @@
             </ul>
         </nav>
 
-        <div class="navbar-actions">
+        {{-- <div class="navbar-actions">
             <button class="action-button" id="register-button">
                 Registrarme »
             </button>
-        </div>
+        </div> --}}
 
         <button class="navbar-hamburger" id="mobile-menu-button" type="button" aria-label="Abrir menú">
             <span></span>
