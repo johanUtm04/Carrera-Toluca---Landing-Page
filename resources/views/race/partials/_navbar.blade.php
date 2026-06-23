@@ -1,8 +1,8 @@
 <header class="navbar-header">
-    <div class="navbar-contenedor">
+    <div class="navbar-container">
 
         <div class="navbar-logo">
-            <img src="{{ asset('images/logo.png') }}" alt="Corporación Azul">
+            <img src="{{ asset('images/logoblanco.webp') }}" alt="Corporación Azul">
         </div>
 
         <nav class="navbar-menu">
@@ -14,11 +14,13 @@
             </ul>
         </nav>
 
-        <div class="navbar-acciones">
-            <button class="boton-accion" id="btn-registrarme">Registrarme »</button>
+        <div class="navbar-actions">
+            <button class="action-button" id="register-button">
+                Registrarme »
+            </button>
         </div>
 
-        <button class="navbar-hamburguesa" id="btn-menu-mobile">
+        <button class="navbar-hamburger" id="mobile-menu-button" type="button" aria-label="Abrir menú">
             <span></span>
             <span></span>
             <span></span>

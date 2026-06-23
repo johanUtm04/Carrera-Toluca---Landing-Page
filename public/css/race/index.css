@@ -1,0 +1,211 @@
+/* ===============================
+   NAVBAR
+================================ */
+
+.navbar-header {
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    background: rgba(5, 20, 45, 0.92);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.navbar-container {
+    width: min(1200px, 92%);
+    height: 82px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 32px;
+}
+
+.navbar-logo {
+    display: flex;
+    align-items: center;
+    flex-shrink: 0;
+}
+
+.navbar-logo img {
+    width: 160px;
+    height: auto;
+    display: block;
+}
+
+.navbar-menu {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+}
+
+.navbar-links {
+    list-style: none;
+    display: flex;
+    align-items: center;
+    gap: 34px;
+    padding: 0;
+    margin: 0;
+}
+
+.navbar-link {
+    position: relative;
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 0.92rem;
+    font-weight: 600;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    transition: color 0.25s ease;
+}
+
+.navbar-link::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -8px;
+    width: 0;
+    height: 2px;
+    background: #e30613;
+    transition: width 0.25s ease;
+}
+
+.navbar-link:hover {
+    color: #e30613;
+}
+
+.navbar-link:hover::after {
+    width: 100%;
+}
+
+.navbar-actions {
+    display: flex;
+    align-items: center;
+    flex-shrink: 0;
+}
+
+.action-button {
+    border: none;
+    outline: none;
+    cursor: pointer;
+    background: #e30613;
+    color: #ffffff;
+    padding: 14px 24px;
+    border-radius: 999px;
+    font-size: 0.9rem;
+    font-weight: 700;
+    letter-spacing: 0.03em;
+    text-transform: uppercase;
+    box-shadow: 0 10px 24px rgba(227, 6, 19, 0.32);
+    transition:
+        transform 0.25s ease,
+        box-shadow 0.25s ease,
+        background 0.25s ease;
+}
+
+.action-button:hover {
+    background: #ff1d2d;
+    transform: translateY(-2px);
+    box-shadow: 0 14px 32px rgba(227, 6, 19, 0.45);
+}
+
+.navbar-hamburger {
+    display: none;
+    width: 42px;
+    height: 42px;
+    border: none;
+    background: transparent;
+    cursor: pointer;
+    padding: 0;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+}
+
+.navbar-hamburger span {
+    width: 26px;
+    height: 2px;
+    background: #ffffff;
+    border-radius: 10px;
+    transition:
+        transform 0.25s ease,
+        opacity 0.25s ease;
+}
+
+/* ===============================
+   RESPONSIVE NAVBAR
+================================ */
+
+@media (max-width: 900px) {
+    .navbar-container {
+        height: 74px;
+    }
+
+    .navbar-logo img {
+        width: 135px;
+    }
+
+    .navbar-menu {
+        position: fixed;
+        top: 74px;
+        left: 0;
+        width: 100%;
+        background: rgba(5, 20, 45, 0.98);
+        padding: 26px 0;
+        transform: translateY(-120%);
+        opacity: 0;
+        pointer-events: none;
+        transition:
+            transform 0.3s ease,
+            opacity 0.3s ease;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    }
+
+    .navbar-menu.is-active {
+        transform: translateY(0);
+        opacity: 1;
+        pointer-events: auto;
+    }
+
+    .navbar-links {
+        flex-direction: column;
+        gap: 22px;
+    }
+
+    .navbar-actions {
+        display: none;
+    }
+
+    .navbar-hamburger {
+        display: flex;
+    }
+
+    .navbar-hamburger.is-active span:nth-child(1) {
+        transform: translateY(8px) rotate(45deg);
+    }
+
+    .navbar-hamburger.is-active span:nth-child(2) {
+        opacity: 0;
+    }
+
+    .navbar-hamburger.is-active span:nth-child(3) {
+        transform: translateY(-8px) rotate(-45deg);
+    }
+}
+
+@media (max-width: 480px) {
+    .navbar-container {
+        width: 90%;
+    }
+
+    .navbar-logo img {
+        width: 120px;
+    }
+
+    .navbar-link {
+        font-size: 0.85rem;
+    }
+}
