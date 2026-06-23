@@ -1451,3 +1451,417 @@
     }
 }
 
+
+
+
+/* ==========================================================================
+   ROUTE SECTION
+   ========================================================================== */
+
+.route-section {
+    width: 100%;
+    background: #20265f;
+    padding: 75px 20px 90px;
+    overflow: hidden;
+}
+
+.route-container {
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.route-content {
+    margin-top: 65px;
+}
+
+.route-map-wrapper {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.route-map-image {
+    width: 100%;
+    max-width: 930px;
+    height: auto;
+    display: block;
+    object-fit: contain;
+    filter: drop-shadow(0 20px 35px rgba(0, 0, 0, 0.18));
+}
+
+.route-info-card {
+    max-width: 820px;
+    margin: 35px auto 0;
+    display: grid;
+    grid-template-columns: 220px 1fr;
+    align-items: center;
+    background: var(--accent-red);
+    overflow: hidden;
+    box-shadow: 0 18px 36px rgba(0, 0, 0, 0.22);
+}
+
+.route-distance {
+    height: 100%;
+    min-height: 115px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(
+        135deg,
+        var(--accent-red) 0%,
+        #c9001a 100%
+    );
+    position: relative;
+}
+
+.route-distance::after {
+    content: "";
+    position: absolute;
+    right: -40px;
+    top: 0;
+    width: 80px;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.08);
+    transform: skewX(-18deg);
+}
+
+.route-distance span {
+    position: relative;
+    z-index: 2;
+    color: #ffffff;
+    font-size: clamp(3rem, 6vw, 4.8rem);
+    font-weight: 900;
+    line-height: 1;
+    text-transform: uppercase;
+    text-shadow: 4px 4px 0 rgba(0, 0, 0, 0.8);
+}
+
+.route-description {
+    margin: 0;
+    padding: 26px 34px;
+    color: #ffffff;
+    font-size: clamp(1rem, 2vw, 1.3rem);
+    font-weight: 500;
+    line-height: 1.35;
+}
+
+.route-description strong {
+    font-weight: 900;
+}
+
+/* ==========================================================================
+   RESPONSIVE
+   ========================================================================== */
+
+@media (max-width: 900px) {
+    .route-content {
+        margin-top: 50px;
+    }
+
+    .route-info-card {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+
+    .route-distance {
+        min-height: 90px;
+    }
+
+    .route-distance::after {
+        display: none;
+    }
+
+    .route-description {
+        padding: 24px 26px 28px;
+    }
+}
+
+@media (max-width: 600px) {
+    .route-section {
+        padding: 60px 18px 70px;
+    }
+
+    .route-map-image {
+        max-width: 100%;
+    }
+
+    .route-info-card {
+        margin-top: 28px;
+    }
+
+    .route-distance span {
+        font-size: 3.2rem;
+    }
+
+    .route-description {
+        font-size: 0.98rem;
+    }
+}
+
+
+
+
+/* ==========================================================================
+   REGISTRATION CENTERS SECTION
+   ========================================================================== */
+
+.registration-centers-section {
+    width: 100%;
+    background: #ffffff;
+    padding: 75px 20px 85px;
+}
+
+.registration-centers-container {
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.registration-centers-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 34px;
+    max-width: 900px;
+    margin: 70px auto 0;
+}
+
+.registration-card {
+    min-height: 280px;
+    display: grid;
+    grid-template-columns: 160px 1fr;
+    align-items: center;
+    gap: 28px;
+
+    background: #ffffff;
+    border: 1px solid #edf1f5;
+    border-radius: 8px;
+    padding: 34px 32px;
+
+    box-shadow:
+        0 18px 40px rgba(15, 23, 42, 0.07),
+        inset 0 1px 0 rgba(255, 255, 255, 0.8);
+}
+
+.registration-card-bank {
+    display: flex;
+    align-items: center;
+}
+
+.registration-card-logo {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    background: #f5f7fa;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 26px;
+}
+
+.registration-card-logo img {
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+}
+
+.registration-card-title {
+    color: #263447;
+    font-size: 1.25rem;
+    font-weight: 800;
+    line-height: 1.1;
+    margin: 0 0 16px;
+}
+
+.registration-store-list {
+    margin: 0 0 14px 18px;
+    padding: 0;
+}
+
+.registration-store-list li {
+    color: #333333;
+    font-size: 0.95rem;
+    line-height: 1.55;
+}
+
+.registration-link {
+    color: var(--accent-blue);
+    font-size: 0.95rem;
+    font-weight: 600;
+    text-decoration: none;
+    border-bottom: 1px solid rgba(0, 120, 200, 0.35);
+    transition:
+        color 0.25s ease,
+        border-color 0.25s ease;
+}
+
+.registration-link:hover {
+    color: var(--accent-red);
+    border-color: var(--accent-red);
+}
+
+.registration-card-text {
+    color: #333333;
+    font-size: 0.95rem;
+    line-height: 1.6;
+    margin: 0 0 14px;
+}
+
+.registration-card-text a {
+    color: var(--accent-blue);
+    font-weight: 700;
+    text-decoration: none;
+}
+
+.registration-card-text a:hover {
+    color: var(--accent-red);
+}
+
+/* ==========================================================================
+   RESPONSIVE
+   ========================================================================== */
+
+@media (max-width: 900px) {
+    .registration-centers-grid {
+        grid-template-columns: 1fr;
+        max-width: 600px;
+        margin-top: 50px;
+    }
+
+    .registration-card {
+        min-height: auto;
+    }
+}
+
+@media (max-width: 600px) {
+    .registration-centers-section {
+        padding: 60px 18px 70px;
+    }
+
+    .registration-card {
+        grid-template-columns: 1fr;
+        text-align: center;
+        padding: 30px 24px;
+    }
+
+    .registration-card-logo {
+        margin: 0 auto;
+        width: 135px;
+        height: 135px;
+    }
+
+    .registration-store-list {
+        display: inline-block;
+        text-align: left;
+    }
+
+    .registration-card-bank {
+        text-align: left;
+    }
+
+    .registration-card-title {
+        font-size: 1.15rem;
+    }
+
+    .registration-card-text,
+    .registration-store-list li,
+    .registration-link {
+        font-size: 0.9rem;
+    }
+}
+
+
+
+
+/* ==========================================================================
+   OUT OF TOWN SUPPORT SECTION
+   ========================================================================== */
+
+.out-of-town-section {
+    position: relative;
+    width: 100%;
+    background: var(--accent-red);
+    padding: 85px 20px 90px;
+    overflow: hidden;
+}
+
+.out-of-town-section::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background:
+        linear-gradient(
+            135deg,
+            rgba(255, 255, 255, 0.08) 0%,
+            transparent 35%,
+            rgba(0, 0, 0, 0.08) 100%
+        );
+    z-index: 1;
+}
+
+.out-of-town-container {
+    position: relative;
+    z-index: 2;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.out-of-town-content {
+    max-width: 920px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.out-of-town-subtitle {
+    color: #ffffff;
+    font-size: 0.95rem;
+    font-weight: 900;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    margin: 0 0 28px;
+}
+
+.out-of-town-text {
+    color: #ffffff;
+    font-size: 0.98rem;
+    font-weight: 700;
+    line-height: 1.65;
+    margin: 0 auto;
+}
+
+.out-of-town-text strong {
+    font-weight: 900;
+    text-transform: uppercase;
+}
+
+.out-of-town-message {
+    color: #ffffff;
+    font-size: 1rem;
+    font-weight: 900;
+    margin: 32px 0 0;
+}
+
+/* ==========================================================================
+   RESPONSIVE
+   ========================================================================== */
+
+@media (max-width: 768px) {
+    .out-of-town-section {
+        padding: 70px 18px 75px;
+    }
+
+    .out-of-town-subtitle {
+        font-size: 0.9rem;
+        margin-bottom: 24px;
+    }
+
+    .out-of-town-text {
+        font-size: 0.92rem;
+        line-height: 1.6;
+    }
+
+    .out-of-town-message {
+        font-size: 0.95rem;
+    }
+}
+

@@ -17,10 +17,11 @@
     @include('race.partials._awards')
     @include('race.partials._runner-kit')
     @include('race.partials._raffle')
+    @include('race.partials._route')
+    @include('race.partials._registration-centers')
+    @include('race.partials._out-of-town-support')
+
     
-    @include('race.partials._services')
-    @include('race.partials._video')
-    @include('race.partials._kit-details')
 @stop
 
 @section('js')
