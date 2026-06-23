@@ -2255,4 +2255,41 @@ body {
 
 
 
+/* ==========================================================================
+   SCROLL REVEAL ANIMATION
+   ========================================================================== */
+
+.scroll-reveal {
+    opacity: 0;
+    transform: translateY(38px);
+    transition:
+        opacity 0.8s ease,
+        transform 0.8s ease;
+    will-change: opacity, transform;
+}
+
+.scroll-reveal.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.scroll-reveal.reveal-delay-small {
+    transition-delay: 0.12s;
+}
+
+.scroll-reveal.reveal-delay-medium {
+    transition-delay: 0.2s;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .scroll-reveal {
+        opacity: 1;
+        transform: none;
+        transition: none;
+    }
+}
+
+
+
+
 
