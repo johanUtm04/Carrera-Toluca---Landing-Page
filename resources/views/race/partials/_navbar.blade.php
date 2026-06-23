@@ -2,7 +2,7 @@
     <div class="navbar-container">
 
         <div class="navbar-logo">
-            <img src="{{ asset('images/logoblanco.webp') }}" alt="Corporación Azul">
+            <img src="{{ asset('images/imgexample.png') }}" alt="Corporación Azul">
         </div>
 
         <nav class="navbar-menu">

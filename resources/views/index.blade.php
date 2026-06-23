@@ -7,7 +7,12 @@
 @stop
 
 @section('content')
+    @include('race.partials._results-button', [
+    'href' => '#resultados',
+    'text' => 'Ver Resultados',
+                                ])
     @include('race.partials._hero')
+    @include('race.partials._cause')
     @include('race.partials._services')
     @include('race.partials._video')
     @include('race.partials._kit-details')
