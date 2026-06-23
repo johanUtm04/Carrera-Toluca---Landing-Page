@@ -835,3 +835,619 @@
     }
 }
 
+
+
+
+/* ==========================================================================
+   AWARDS SECTION
+   ========================================================================== */
+
+.awards-section {
+    width: 100%;
+    background: #ffffff;
+    padding: 75px 20px 85px;
+}
+
+.awards-container {
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.awards-summary {
+    max-width: 760px;
+    margin: 0 auto 55px;
+    text-align: center;
+}
+
+.awards-important {
+    margin: 0 0 6px;
+    color: var(--accent-red);
+    font-size: 0.95rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+}
+
+.awards-important-text {
+    margin: 0 0 18px;
+    color: var(--accent-red);
+    font-size: 0.92rem;
+    line-height: 1.5;
+}
+
+.awards-summary-label {
+    margin: 0 0 8px;
+    color: #4b5563;
+    font-size: 0.95rem;
+}
+
+.awards-summary-amount {
+    margin: 0;
+    color: var(--accent-red);
+    font-size: clamp(2.4rem, 5vw, 4rem);
+    font-weight: 900;
+    line-height: 1;
+}
+
+.awards-summary-description {
+    margin: 10px 0 0;
+    color: #4b5563;
+    font-size: 0.95rem;
+    line-height: 1.5;
+}
+
+.awards-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 28px;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.awards-card {
+    background: #f8fafc;
+    border: 1px solid #e7edf5;
+    border-radius: 10px;
+    padding: 28px 24px;
+    box-shadow: 0 12px 30px rgba(15, 23, 42, 0.06);
+}
+
+.awards-card-title {
+    margin: 0 0 14px;
+    color: var(--accent-blue);
+    font-size: 1.55rem;
+    font-weight: 800;
+}
+
+.awards-card-text {
+    margin: 0 0 8px;
+    color: #374151;
+    font-size: 0.95rem;
+    line-height: 1.55;
+}
+
+.awards-table-wrapper {
+    margin-top: 22px;
+    overflow-x: auto;
+}
+
+.awards-table-wrapper-small {
+    max-width: 320px;
+}
+
+.awards-table {
+    width: 100%;
+    border-collapse: collapse;
+    background: #ffffff;
+    border: 1px solid #d9e2ec;
+}
+
+.awards-table thead th {
+    background: var(--accent-blue);
+    color: #ffffff;
+    font-size: 0.88rem;
+    font-weight: 700;
+    text-align: center;
+    padding: 10px 8px;
+    border: 1px solid #d9e2ec;
+    line-height: 1.3;
+}
+
+.awards-table thead th:first-child {
+    min-width: 100px;
+}
+
+.awards-table thead th small {
+    display: block;
+    font-size: 0.7rem;
+    font-weight: 600;
+    opacity: 0.9;
+}
+
+.awards-table tbody td {
+    color: #374151;
+    font-size: 0.88rem;
+    text-align: center;
+    padding: 9px 8px;
+    border: 1px solid #d9e2ec;
+    line-height: 1.35;
+}
+
+.awards-table tbody td:first-child {
+    font-weight: 700;
+    color: #1f2937;
+    background: #f8fafc;
+    white-space: nowrap;
+}
+
+.awards-table-small {
+    max-width: 280px;
+}
+
+/* ==========================================================================
+   RESPONSIVE
+   ========================================================================== */
+
+@media (max-width: 768px) {
+    .awards-section {
+        padding: 60px 18px 70px;
+    }
+
+    .awards-summary {
+        margin-bottom: 40px;
+    }
+
+    .awards-card {
+        padding: 22px 18px;
+    }
+
+    .awards-card-title {
+        font-size: 1.3rem;
+    }
+
+    .awards-card-text,
+    .awards-important-text,
+    .awards-summary-description,
+    .awards-summary-label {
+        font-size: 0.9rem;
+    }
+
+    .awards-table thead th,
+    .awards-table tbody td {
+        font-size: 0.8rem;
+        padding: 8px 6px;
+    }
+}
+
+
+
+
+/* ==========================================================================
+   RUNNER KIT SECTION
+   ========================================================================== */
+
+.runner-kit-section {
+    width: 100%;
+    background: #ffffff;
+    padding: 75px 20px 85px;
+}
+
+.runner-kit-container {
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.runner-kit-content {
+    display: grid;
+    grid-template-columns: 1fr 1.2fr 1fr;
+    align-items: center;
+    gap: 55px;
+    margin-top: 70px;
+}
+
+.runner-kit-info {
+    color: #333333;
+}
+
+.runner-kit-subtitle {
+    margin: 0 0 28px;
+    color: #263447;
+    font-size: 1rem;
+    font-weight: 800;
+}
+
+.runner-kit-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.runner-kit-list li {
+    display: flex;
+    align-items: flex-start;
+    gap: 9px;
+    color: #333333;
+    font-size: 0.95rem;
+    line-height: 1.45;
+    margin-bottom: 10px;
+}
+
+.runner-kit-list li span {
+    flex: 0 0 auto;
+    width: 15px;
+    height: 15px;
+    margin-top: 3px;
+    border: 1px solid var(--accent-blue);
+    border-radius: 50%;
+    position: relative;
+}
+
+.runner-kit-list li span::after {
+    content: "✓";
+    position: absolute;
+    top: -5px;
+    left: 2px;
+    color: var(--accent-blue);
+    font-size: 0.85rem;
+    font-weight: 800;
+}
+
+.runner-kit-shirt {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.runner-kit-shirt-image {
+    width: 100%;
+    max-width: 280px;
+    height: auto;
+    object-fit: contain;
+    filter: drop-shadow(0 16px 24px rgba(15, 23, 42, 0.08));
+}
+
+.runner-kit-button {
+    margin-top: 22px;
+}
+
+.runner-kit-items {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    align-items: center;
+    gap: 22px;
+}
+
+.runner-kit-item {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.runner-kit-item img {
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+    filter: drop-shadow(0 12px 18px rgba(15, 23, 42, 0.08));
+}
+
+.runner-kit-medal img {
+    max-width: 120px;
+}
+
+.runner-kit-number img {
+    max-width: 150px;
+}
+
+.runner-kit-bag {
+    grid-column: span 1;
+}
+
+.runner-kit-bag img {
+    max-width: 165px;
+}
+
+.runner-kit-chip img {
+    max-width: 95px;
+}
+
+/* ==========================================================================
+   RESPONSIVE
+   ========================================================================== */
+
+@media (max-width: 900px) {
+    .runner-kit-content {
+        grid-template-columns: 1fr;
+        gap: 45px;
+        margin-top: 50px;
+        text-align: center;
+    }
+
+    .runner-kit-info {
+        max-width: 420px;
+        margin: 0 auto;
+    }
+
+    .runner-kit-list li {
+        text-align: left;
+    }
+
+    .runner-kit-items {
+        max-width: 420px;
+        margin: 0 auto;
+    }
+}
+
+@media (max-width: 600px) {
+    .runner-kit-section {
+        padding: 60px 18px 70px;
+    }
+
+    .runner-kit-shirt-image {
+        max-width: 230px;
+    }
+
+    .runner-kit-items {
+        gap: 18px;
+    }
+
+    .runner-kit-list li {
+        font-size: 0.9rem;
+    }
+
+    .runner-kit-medal img {
+        max-width: 100px;
+    }
+
+    .runner-kit-number img {
+        max-width: 130px;
+    }
+
+    .runner-kit-bag img {
+        max-width: 140px;
+    }
+
+    .runner-kit-chip img {
+        max-width: 80px;
+    }
+}
+
+
+
+
+/* ==========================================================================
+   RAFFLE SECTION
+   ========================================================================== */
+
+.raffle-section {
+    width: 100%;
+    background: #16785e;
+    padding: 75px 20px 85px;
+    overflow: hidden;
+}
+
+.raffle-container {
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.section-heading-light {
+    margin-bottom: 70px;
+}
+
+.section-title-light {
+    color: #ffffff;
+}
+
+.section-divider-light {
+    background: rgba(255, 255, 255, 0.18);
+}
+
+.section-divider-light span {
+    background: var(--accent-blue);
+}
+
+.raffle-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    align-items: end;
+    gap: 50px;
+}
+
+.raffle-prize-card {
+    position: relative;
+    text-align: center;
+}
+
+.raffle-prize-card-featured {
+    transform: translateY(-18px);
+}
+
+.raffle-prize-stage {
+    position: relative;
+    min-height: 230px;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    padding: 28px 20px 32px;
+}
+
+.raffle-prize-stage::before {
+    content: "";
+    position: absolute;
+    width: 230px;
+    height: 230px;
+    border-radius: 50%;
+    background:
+        repeating-linear-gradient(
+            135deg,
+            rgba(255, 255, 255, 0.16) 0,
+            rgba(255, 255, 255, 0.16) 2px,
+            transparent 2px,
+            transparent 8px
+        );
+    opacity: 0.45;
+    z-index: 1;
+}
+
+.raffle-prize-stage::after {
+    content: "";
+    position: absolute;
+    bottom: 10px;
+    width: 250px;
+    height: 48px;
+    border-radius: 50%;
+    background: linear-gradient(
+        180deg,
+        rgba(49, 199, 152, 0.8),
+        rgba(9, 80, 62, 0.9)
+    );
+    box-shadow:
+        0 18px 30px rgba(0, 0, 0, 0.22),
+        inset 0 3px 0 rgba(255, 255, 255, 0.15);
+    z-index: 2;
+}
+
+.raffle-prize-image {
+    position: relative;
+    z-index: 3;
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+    filter: drop-shadow(0 18px 20px rgba(0, 0, 0, 0.22));
+}
+
+.raffle-prize-tv {
+    max-width: 220px;
+}
+
+.raffle-prize-bike {
+    max-width: 210px;
+}
+
+.raffle-prize-motorcycle {
+    max-width: 260px;
+}
+
+.raffle-position-badge {
+    position: absolute;
+    top: 18px;
+    right: 40px;
+    z-index: 5;
+
+    width: 58px;
+    height: 58px;
+    border-radius: 50%;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: #ffcc35;
+    color: #111827;
+
+    box-shadow:
+        0 8px 16px rgba(0, 0, 0, 0.22),
+        inset 0 3px 0 rgba(255, 255, 255, 0.35);
+}
+
+.raffle-position-badge strong {
+    font-size: 2rem;
+    font-weight: 900;
+    line-height: 1;
+}
+
+.raffle-position-badge span {
+    font-size: 0.62rem;
+    font-weight: 900;
+    margin-left: 2px;
+    margin-top: -12px;
+    text-transform: uppercase;
+}
+
+.raffle-position-badge-featured {
+    top: -2px;
+    right: 26px;
+    width: 66px;
+    height: 66px;
+}
+
+.raffle-position-badge-featured strong {
+    font-size: 2.3rem;
+}
+
+.raffle-prize-title {
+    margin: 18px 0 0;
+    color: #ffffff;
+    font-size: 1.05rem;
+    font-weight: 500;
+    line-height: 1.4;
+}
+
+/* ==========================================================================
+   RESPONSIVE
+   ========================================================================== */
+
+@media (max-width: 900px) {
+    .raffle-grid {
+        grid-template-columns: 1fr;
+        gap: 55px;
+        max-width: 420px;
+        margin: 0 auto;
+    }
+
+    .raffle-prize-card-featured {
+        transform: none;
+    }
+
+    .raffle-prize-stage {
+        min-height: 220px;
+    }
+
+    .raffle-position-badge,
+    .raffle-position-badge-featured {
+        top: 10px;
+        right: 45px;
+    }
+}
+
+@media (max-width: 600px) {
+    .raffle-section {
+        padding: 60px 18px 70px;
+    }
+
+    .section-heading-light {
+        margin-bottom: 45px;
+    }
+
+    .raffle-prize-stage::before {
+        width: 210px;
+        height: 210px;
+    }
+
+    .raffle-prize-stage::after {
+        width: 230px;
+    }
+
+    .raffle-prize-tv {
+        max-width: 200px;
+    }
+
+    .raffle-prize-bike {
+        max-width: 190px;
+    }
+
+    .raffle-prize-motorcycle {
+        max-width: 230px;
+    }
+
+    .raffle-position-badge,
+    .raffle-position-badge-featured {
+        right: 30px;
+    }
+
+    .raffle-prize-title {
+        font-size: 0.98rem;
+    }
+}
+
