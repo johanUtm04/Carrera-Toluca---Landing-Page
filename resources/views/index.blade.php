@@ -20,6 +20,7 @@
     @include('race.partials._route')
     @include('race.partials._registration-centers')
     @include('race.partials._out-of-town-support')
+    @include('race.partials._organizer-contact')
 
     
 @stop
